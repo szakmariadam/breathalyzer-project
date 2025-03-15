@@ -93,6 +93,12 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim2);
 
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_RESET); //A
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET); //B
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_RESET); //C
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET); //D
+
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -100,6 +106,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+
 
     /* USER CODE BEGIN 3 */
   }
