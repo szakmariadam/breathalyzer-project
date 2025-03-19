@@ -46,6 +46,8 @@ ADC_HandleTypeDef hadc1;
 
 TIM_HandleTypeDef htim2;
 
+uint16_t ADC_result;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -104,7 +106,6 @@ int main(void)
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET); //C
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET); //D
 
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,6 +113,19 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+	  //ADC polling
+	  if (HAL_ADC_Start(&hadc1) != HAL_OK)
+	    {
+	      /* Start Error */
+	      Error_Handler();
+	    }
+
+	  HAL_ADC_PollForConversion(&hadc1, 1000);
+
+	  ADC_result = HAL_ADC_GetValue(&hadc1);
+
+
 
     /* USER CODE BEGIN 3 */
   }
