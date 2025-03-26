@@ -49,7 +49,9 @@ TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
 
+uint16_t ADC_result_temp;
 uint16_t ADC_result;
+uint16_t ADC_buffer[256];
 
 /* USER CODE END PV */
 
@@ -128,7 +130,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
 	  //ADC polling
 	  if (HAL_ADC_Start(&hadc1) != HAL_OK)
 	    {
@@ -136,9 +137,21 @@ int main(void)
 	      Error_Handler();
 	    }
 
-	  HAL_ADC_PollForConversion(&hadc1, 1000);
+	  for(uint16_t i = 0; i<255; i++)
+	  {
+		  HAL_ADC_PollForConversion(&hadc1, 1000);
+		  ADC_buffer[i] = HAL_ADC_GetValue(&hadc1);
+	  }
 
-	  ADC_result = HAL_ADC_GetValue(&hadc1);
+	  ADC_result_temp = 0;
+
+	  for(uint16_t i = 0; i<255; i++)
+	  {
+		  ADC_result_temp += ADC_buffer[i];
+		  ADC_result_temp = ADC_result_temp/2;
+	  }
+
+	  ADC_result = ADC_result_temp;
 
 	  HAL_ADC_Stop(&hadc1);
 
@@ -216,7 +229,7 @@ static void MX_ADC1_Init(void)
   */
   hadc1.Instance = ADC1;
   hadc1.Init.ScanConvMode = ADC_SCAN_DISABLE;
-  hadc1.Init.ContinuousConvMode = DISABLE;
+  hadc1.Init.ContinuousConvMode = ENABLE;
   hadc1.Init.DiscontinuousConvMode = DISABLE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
@@ -262,7 +275,7 @@ static void MX_TIM1_Init(void)
 
   /* USER CODE END TIM1_Init 1 */
   htim1.Instance = TIM1;
-  htim1.Init.Prescaler = 63999;
+  htim1.Init.Prescaler = 6399;
   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim1.Init.Period = 100;
   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -288,7 +301,7 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 50;
+  sConfigOC.Pulse = 80;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
