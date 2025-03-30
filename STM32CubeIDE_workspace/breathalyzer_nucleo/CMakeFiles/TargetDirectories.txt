@@ -1,0 +1,6 @@
+C:/workfolder/breathalyzer-project/STM32CubeIDE_workspace/breathalyzer_nucleo/CMakeFiles/breathalyzer_nucleo.dir
+C:/workfolder/breathalyzer-project/STM32CubeIDE_workspace/breathalyzer_nucleo/CMakeFiles/edit_cache.dir
+C:/workfolder/breathalyzer-project/STM32CubeIDE_workspace/breathalyzer_nucleo/CMakeFiles/rebuild_cache.dir
+C:/workfolder/breathalyzer-project/STM32CubeIDE_workspace/breathalyzer_nucleo/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+C:/workfolder/breathalyzer-project/STM32CubeIDE_workspace/breathalyzer_nucleo/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+C:/workfolder/breathalyzer-project/STM32CubeIDE_workspace/breathalyzer_nucleo/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
