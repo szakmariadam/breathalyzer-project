@@ -27,6 +27,13 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+typedef struct{
+  GPIO_PinState D;
+  GPIO_PinState C;
+  GPIO_PinState B;
+  GPIO_PinState A;
+} sevenSegmentDriver;
+
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -53,6 +60,19 @@ uint16_t ADC_result_temp;
 uint16_t ADC_result;
 uint16_t ADC_buffer[256];
 
+sevenSegmentDriver driverCode[10] = {
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET}, //1
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET}, //2
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET}, //3
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //4
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_SET}, //5
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_RESET}, //6
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_SET}, //7
+  {GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //8
+  {GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET}  //9
+};
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,6 +82,8 @@ static void MX_TIM2_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM1_Init(void);
 /* USER CODE BEGIN PFP */
+
+void setSegment(uint8_t value);
 
 /* USER CODE END PFP */
 
@@ -113,10 +135,7 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim2);
 
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, GPIO_PIN_SET); //A
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, GPIO_PIN_RESET); //B
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, GPIO_PIN_SET); //C
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET); //D
+  setSegment(5);
 
   if(HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1) != HAL_OK)
   	  {
@@ -416,6 +435,13 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+void setSegment(uint8_t value){
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, driverCode[value].A); //A
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, driverCode[value].B); //B
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, driverCode[value].C); //C
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, driverCode[value].D); //D
+};
 
 /* USER CODE END 4 */
 
