@@ -67,6 +67,7 @@ uint16_t display_value = 0;
 uint16_t display_temp = 0;
 uint8_t digit = 5; //iterator for 7-segment display, starts from 5
 uint8_t maxDigits = 0;
+GPIO_PinState buttonState = GPIO_PIN_RESET;
 
 sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -186,6 +187,8 @@ int main(void)
 	  HAL_ADC_Stop(&hadc1);
 
     display_value = 420;
+
+    buttonState = HAL_GPIO_ReadPin(button_GPIO_Port, button_Pin);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -473,6 +476,12 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_8
                           |GPIO_PIN_9, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : button_Pin */
+  GPIO_InitStruct.Pin = button_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(button_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LD2_Pin PA6 PA7 PA10 */
   GPIO_InitStruct.Pin = LD2_Pin|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_10;
