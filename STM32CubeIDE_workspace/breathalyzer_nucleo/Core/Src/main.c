@@ -22,6 +22,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include <math.h>
+#include <stdlib.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,18 +66,20 @@ uint16_t ADC_buffer[256];
 uint16_t display_value = 0;
 uint16_t display_temp = 0;
 uint8_t digit = 5; //iterator for 7-segment display, starts from 5
+uint8_t maxDigits = 0;
 
-sevenSegmentDriver driverCode[10] = {
+sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
-  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET}, //1
-  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET}, //2
-  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET}, //3
-  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //4
-  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_SET}, //5
-  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_RESET}, //6
-  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_SET}, //7
-  {GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //8
-  {GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET}  //9
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET},   //1
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET},   //2
+  {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET},     //3
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET},   //4
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_SET},     //5
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_RESET},     //6
+  {GPIO_PIN_RESET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_SET},       //7
+  {GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET},   //8
+  {GPIO_PIN_SET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_SET},     //9
+  {GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_SET, GPIO_PIN_SET}          //off
 };
 
 /* USER CODE END PV */
@@ -89,6 +94,7 @@ static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 void setDigit(uint8_t value, uint8_t digit);
+int countDigits(int num);
 
 /* USER CODE END PFP */
 
@@ -179,7 +185,7 @@ int main(void)
 
 	  HAL_ADC_Stop(&hadc1);
 
-    display_value = 5;
+    display_value = 420;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -524,7 +530,7 @@ void setDigit(uint8_t value, uint8_t digit)
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
       break;
   }
-  if(value < 10)
+  if(value < 11)
   {
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, driverCode[value].A); //A
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, driverCode[value].B); //B
@@ -537,16 +543,30 @@ void TIM3_callback(void)
 {
   if (digit<=4)
   {
-    setDigit(display_temp%10, digit);
-    display_temp = display_temp/10;
+    if (digit <= maxDigits)
+    {
+      setDigit(display_temp%10, digit); // Set the digit to display
+      display_temp = display_temp/10;
+    }
+    else
+    {
+      setDigit(10, digit); // Set to off if no more digits to display
+    }
 
     digit++;
   }
   else
   {
     display_temp = display_value;
+    maxDigits = countDigits(display_value); // Count the number of digits in the display value
+    if (maxDigits > 4){ maxDigits = 4; } // Limit to 4 digits
     digit = 1;
   }
+}
+
+int countDigits(int num) { //for 7 segment display
+  if (num == 0) return 1; // Special case for 0
+  return (int)log10(abs(num)) + 1;
 }
 
 /* USER CODE END 4 */
