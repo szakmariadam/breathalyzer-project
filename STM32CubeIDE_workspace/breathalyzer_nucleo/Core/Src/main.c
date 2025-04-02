@@ -60,6 +60,9 @@ TIM_HandleTypeDef htim3;
 uint16_t ADC_result_temp;
 uint16_t ADC_result;
 uint16_t ADC_buffer[256];
+uint16_t display_value = 0;
+uint16_t display_temp = 0;
+uint8_t digit = 5; //iterator for 7-segment display, starts from 5
 
 sevenSegmentDriver driverCode[10] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -85,7 +88,7 @@ static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
-void setSegment(uint8_t value);
+void setDigit(uint8_t value, uint8_t digit);
 
 /* USER CODE END PFP */
 
@@ -139,8 +142,6 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
 
-  setSegment(5);
-
   if(HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1) != HAL_OK)
   	  {
   	  	  /* Start Error */
@@ -178,6 +179,7 @@ int main(void)
 
 	  HAL_ADC_Stop(&hadc1);
 
+    display_value = 5;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -488,23 +490,63 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-void setSegment(uint8_t value)
+void setDigit(uint8_t value, uint8_t digit)
 {
+  switch (digit){
+    case 1:
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);  //1
+      break;
+    case 2:
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);   //10
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      break;
+    case 3:
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);   //100
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      break;
+    case 4: 
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);  //1000
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      break;
+    default:
+      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
+      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      break;
+  }
   if(value < 10)
   {
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, driverCode[value].A); //A
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, driverCode[value].B); //B
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, driverCode[value].C); //C
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, driverCode[value].D); //D
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8, driverCode[value].A); //A
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_9, driverCode[value].B); //B
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, driverCode[value].C); //C
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, driverCode[value].D); //D
   }
 }
 
 void TIM3_callback(void)
 {
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);  //1000
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);   //100
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);   //10
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);  //1
+  if (digit<=4)
+  {
+    setDigit(display_temp%10, digit);
+    display_temp = display_temp/10;
+
+    digit++;
+  }
+  else
+  {
+    display_temp = display_value;
+    digit = 1;
+  }
 }
 
 /* USER CODE END 4 */
