@@ -57,6 +57,7 @@ ADC_HandleTypeDef hadc1;
 TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
+TIM_HandleTypeDef htim4;
 
 /* USER CODE BEGIN PV */
 
@@ -92,12 +93,14 @@ static void MX_TIM2_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
 
 void setDigit(uint8_t value, uint8_t digit);
 int countDigits(int num);
 void TIM2_callback(void);
 void TIM3_callback(void);
+void TIM4_callback(void);
 
 /* USER CODE END PFP */
 
@@ -139,6 +142,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();
+  MX_TIM4_Init();
   /* USER CODE BEGIN 2 */
 
   /* Run the ADC calibration */
@@ -150,6 +154,7 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
+  HAL_TIM_Base_Start_IT(&htim4);
 
   if(HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1) != HAL_OK)
   	  {
@@ -456,6 +461,51 @@ static void MX_TIM3_Init(void)
 }
 
 /**
+  * @brief TIM4 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM4_Init(void)
+{
+
+  /* USER CODE BEGIN TIM4_Init 0 */
+
+  /* USER CODE END TIM4_Init 0 */
+
+  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+
+  /* USER CODE BEGIN TIM4_Init 1 */
+
+  /* USER CODE END TIM4_Init 1 */
+  htim4.Instance = TIM4;
+  htim4.Init.Prescaler = 63999;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 10000;
+  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+  if (HAL_TIM_ConfigClockSource(&htim4, &sClockSourceConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM4_Init 2 */
+
+  /* USER CODE END TIM4_Init 2 */
+
+}
+
+/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -583,6 +633,27 @@ int countDigits(int num) { //for 7 segment display
 void TIM2_callback(void)
 {
   HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+}
+
+void TIM4_callback(void)
+{
+  if (__HAL_PWR_GET_FLAG(PWR_FLAG_SB) != RESET)
+  {
+    __HAL_PWR_CLEAR_FLAG(PWR_FLAG_SB); // Clear Standby flag
+    // Proceed to main application
+  }
+  else
+  {
+    HAL_PWR_DisableWakeUpPin(PWR_WAKEUP_PIN1); // Disable before configuring
+
+    __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU | PWR_FLAG_SB); // Clear wakeup & standby flags
+
+    HAL_PWR_EnableWakeUpPin(PWR_WAKEUP_PIN1); // Enable wakeup pin
+
+    HAL_PWR_EnterSTANDBYMode(); // Enter standby mode
+  }
+
+
 }
 
 /* USER CODE END 4 */
