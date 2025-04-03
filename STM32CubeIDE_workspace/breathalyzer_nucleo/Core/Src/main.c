@@ -96,6 +96,8 @@ static void MX_TIM3_Init(void);
 
 void setDigit(uint8_t value, uint8_t digit);
 int countDigits(int num);
+void TIM2_callback(void);
+void TIM3_callback(void);
 
 /* USER CODE END PFP */
 
@@ -576,6 +578,11 @@ void TIM3_callback(void)
 int countDigits(int num) { //for 7 segment display
   if (num == 0) return 1; // Special case for 0
   return (int)log10(abs(num)) + 1;
+}
+
+void TIM2_callback(void)
+{
+  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 }
 
 /* USER CODE END 4 */
