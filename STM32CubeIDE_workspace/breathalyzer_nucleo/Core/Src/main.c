@@ -162,6 +162,8 @@ int main(void)
   	  	  Error_Handler();
   	  }
 
+  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET); // Power LED ON
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -632,7 +634,7 @@ int countDigits(int num) { //for 7 segment display
 
 void TIM2_callback(void)
 {
-  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+  
 }
 
 void TIM4_callback(void)
@@ -644,6 +646,8 @@ void TIM4_callback(void)
   }
   else
   {
+    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET); // Power LED OFF
+
     HAL_PWR_DisableWakeUpPin(PWR_WAKEUP_PIN1); // Disable before configuring
 
     __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU | PWR_FLAG_SB); // Clear wakeup & standby flags
