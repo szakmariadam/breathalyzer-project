@@ -71,6 +71,7 @@ void TIM3_callback(void);
 #define SWO_GPIO_Port GPIOB
 #define UserButton_Pin GPIO_PIN_6
 #define UserButton_GPIO_Port GPIOB
+#define UserButton_EXTI_IRQn EXTI9_5_IRQn
 
 /* USER CODE BEGIN Private defines */
 

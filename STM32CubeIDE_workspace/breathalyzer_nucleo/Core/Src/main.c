@@ -69,6 +69,7 @@ uint16_t display_temp = 0;
 uint8_t digit = 5; //iterator for 7-segment display, starts from 5
 uint8_t maxDigits = 0;
 GPIO_PinState buttonState = GPIO_PIN_RESET;
+uint8_t buttonCounter = 0;
 
 sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -101,6 +102,7 @@ int countDigits(int num);
 void TIM2_callback(void);
 void TIM3_callback(void);
 void TIM4_callback(void);
+void UserButton_callback(void);
 
 /* USER CODE END PFP */
 
@@ -572,9 +574,13 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : UserButton_Pin */
   GPIO_InitStruct.Pin = UserButton_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(UserButton_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /* USER CODE END MX_GPIO_Init_2 */
@@ -679,8 +685,11 @@ void TIM4_callback(void)
 
     HAL_PWR_EnterSTANDBYMode(); // Enter standby mode
   }
+}
 
-
+void userButton_callback(void)
+{
+  buttonCounter++;
 }
 
 /* USER CODE END 4 */
