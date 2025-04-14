@@ -61,8 +61,6 @@ void TIM3_callback(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define button_Pin GPIO_PIN_13
-#define button_GPIO_Port GPIOC
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
@@ -71,6 +69,8 @@ void TIM3_callback(void);
 #define TCK_GPIO_Port GPIOA
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
+#define UserButton_Pin GPIO_PIN_6
+#define UserButton_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
