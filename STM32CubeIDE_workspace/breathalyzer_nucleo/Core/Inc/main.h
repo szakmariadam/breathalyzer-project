@@ -63,6 +63,8 @@ void TIM3_callback(void);
 /* Private defines -----------------------------------------------------------*/
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+#define dp_Pin GPIO_PIN_10
+#define dp_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14

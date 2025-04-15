@@ -206,7 +206,7 @@ int main(void)
 
 	  HAL_ADC_Stop(&hadc1);
 
-    display_value = 420;
+    display_value = 4;
 
     buttonState = HAL_GPIO_ReadPin(UserButton_GPIO_Port, UserButton_Pin);
     /* USER CODE END WHILE */
@@ -550,14 +550,14 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LD2_Pin|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_10, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LD2_Pin|GPIO_PIN_6|GPIO_PIN_7|dp_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10|GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_8
                           |GPIO_PIN_9, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LD2_Pin PA6 PA7 PA10 */
-  GPIO_InitStruct.Pin = LD2_Pin|GPIO_PIN_6|GPIO_PIN_7|GPIO_PIN_10;
+  /*Configure GPIO pins : LD2_Pin PA6 PA7 dp_Pin */
+  GPIO_InitStruct.Pin = LD2_Pin|GPIO_PIN_6|GPIO_PIN_7|dp_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -592,34 +592,28 @@ void setDigit(uint8_t value, uint8_t digit)
 {
   switch (digit){
     case 1:
-      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_SET);  //1
+      HAL_GPIO_WritePin(dp_GPIO_Port, dp_Pin, GPIO_PIN_SET); //DP
       break;
     case 2:
-      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);   //10
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      HAL_GPIO_WritePin(dp_GPIO_Port, dp_Pin, GPIO_PIN_SET); //DP
       break;
     case 3:
-      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);   //100
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
-      break;
-    case 4: 
-      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);  //1000
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
-      HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      HAL_GPIO_WritePin(dp_GPIO_Port, dp_Pin, GPIO_PIN_RESET); //DP
       break;
     default:
-      HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_RESET);  //1000
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);   //100
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);   //10
       HAL_GPIO_WritePin(GPIOB, GPIO_PIN_10, GPIO_PIN_RESET);  //1
+      HAL_GPIO_WritePin(dp_GPIO_Port, dp_Pin, GPIO_PIN_SET); //DP
       break;
   }
   if(value < 11)
@@ -633,7 +627,7 @@ void setDigit(uint8_t value, uint8_t digit)
 
 void TIM3_callback(void)
 {
-  if (digit<=4)
+  if (digit<=3)
   {
     if (digit <= maxDigits)
     {
@@ -651,7 +645,7 @@ void TIM3_callback(void)
   {
     display_temp = display_value;
     maxDigits = countDigits(display_value); // Count the number of digits in the display value
-    if (maxDigits > 4){ maxDigits = 4; } // Limit to 4 digits
+    if (maxDigits > 4){ maxDigits = 3; } // Limit to 3 digits
     digit = 1;
   }
 }
