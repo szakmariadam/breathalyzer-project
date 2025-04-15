@@ -70,6 +70,7 @@ uint8_t digit = 5; //iterator for 7-segment display, starts from 5
 uint8_t maxDigits = 0;
 GPIO_PinState buttonState = GPIO_PIN_RESET;
 uint8_t buttonCounter = 0;
+float BAC = 0.0f;
 
 sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -206,7 +207,7 @@ int main(void)
 
 	  HAL_ADC_Stop(&hadc1);
 
-    display_value = 4;
+    display_value = 0.4f * 100;
 
     buttonState = HAL_GPIO_ReadPin(UserButton_GPIO_Port, UserButton_Pin);
     /* USER CODE END WHILE */
@@ -629,23 +630,16 @@ void TIM3_callback(void)
 {
   if (digit<=3)
   {
-    if (digit <= maxDigits)
-    {
-      setDigit(display_temp%10, digit); // Set the digit to display
-      display_temp = display_temp/10;
-    }
-    else
-    {
-      setDigit(10, digit); // Set to off if no more digits to display
-    }
+
+    setDigit(display_temp%10, digit); // Set the digit to display
+    display_temp = display_temp/10;
 
     digit++;
   }
   else
   {
     display_temp = display_value;
-    maxDigits = countDigits(display_value); // Count the number of digits in the display value
-    if (maxDigits > 4){ maxDigits = 3; } // Limit to 3 digits
+
     digit = 1;
   }
 }
