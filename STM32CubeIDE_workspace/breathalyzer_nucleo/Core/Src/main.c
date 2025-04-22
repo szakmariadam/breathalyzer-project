@@ -69,7 +69,6 @@ uint16_t display_temp = 0;
 uint8_t digit = 5; //iterator for 7-segment display, starts from 5
 uint8_t maxDigits = 0;
 GPIO_PinState buttonState = GPIO_PIN_RESET;
-uint8_t buttonCounter = 0;
 float BAC = 0.0f;
 uint8_t warmedUp = 0;
 
@@ -107,6 +106,7 @@ void TIM4_callback(void);
 void UserButton_callback(void);
 void getADCvalue(void);
 void warmup(void);
+void measure(void);
 
 /* USER CODE END PFP */
 
@@ -168,18 +168,7 @@ int main(void)
   		  Error_Handler();
   	}
 
-  if(HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1) != HAL_OK)
-  	{
-  		  /* Start Error */
-  		  Error_Handler();
-  	}
-  
-  HAL_Delay(500);
-  HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1); // Stop PWM on TIM2
-
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET); // Power LED ON
-
-  display_value = 0.0f * 100;
   
   warmup(); // Wait for the sensor to warm up
 
@@ -559,10 +548,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(UserButton_GPIO_Port, &GPIO_InitStruct);
 
-  /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /* USER CODE END MX_GPIO_Init_2 */
 }
@@ -657,7 +642,9 @@ void TIM4_callback(void)
 
 void userButton_callback(void)
 {
-  buttonCounter++;
+  if(warmedUp){
+    measure(); // Measure BAC
+  }
 }
 
 void getADCvalue(void)
@@ -690,6 +677,8 @@ void getADCvalue(void)
 
 void warmup(void)
 {
+
+  display_value = 0.0f * 100;
   getADCvalue(); // Get ADC value
 
   while(ADC_result <= 2400)
@@ -699,6 +688,19 @@ void warmup(void)
   }
 
   warmedUp = 1;
+
+  HAL_TIM_Base_Start_IT(&htim4); // standby timeout
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+}
+
+void measure(void)
+{
+
+  display_value = 0.1f * 100;
+
 }
 
 /* USER CODE END 4 */
