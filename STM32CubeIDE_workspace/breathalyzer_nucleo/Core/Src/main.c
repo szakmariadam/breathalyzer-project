@@ -71,6 +71,7 @@ uint8_t maxDigits = 0;
 GPIO_PinState buttonState = GPIO_PIN_RESET;
 uint8_t buttonCounter = 0;
 float BAC = 0.0f;
+uint8_t warmedUp = 0;
 
 sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -105,6 +106,7 @@ void TIM3_callback(void);
 void TIM4_callback(void);
 void UserButton_callback(void);
 void getADCvalue(void);
+void warmup(void);
 
 /* USER CODE END PFP */
 
@@ -177,8 +179,9 @@ int main(void)
 
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET); // Power LED ON
 
-  display_value = 0.4f * 100;
-  getADCvalue(); // Get ADC value
+  display_value = 0.0f * 100;
+  
+  warmup(); // Wait for the sensor to warm up
 
   /* USER CODE END 2 */
 
@@ -683,6 +686,19 @@ void getADCvalue(void)
 	ADC_result = ADC_result_temp;
 
 	HAL_ADC_Stop(&hadc1);
+}
+
+void warmup(void)
+{
+  getADCvalue(); // Get ADC value
+
+  while(ADC_result <= 2400)
+  {
+    HAL_Delay(1000);
+    getADCvalue(); // Get ADC value
+  }
+
+  warmedUp = 1;
 }
 
 /* USER CODE END 4 */
