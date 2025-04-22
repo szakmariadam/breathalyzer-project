@@ -99,11 +99,12 @@ static void MX_TIM4_Init(void);
 /* USER CODE BEGIN PFP */
 
 void setDigit(uint8_t value, uint8_t digit);
-int countDigits(int num);
+uint8_t countDigits(uint8_t num);
 void TIM2_callback(void);
 void TIM3_callback(void);
 void TIM4_callback(void);
 void UserButton_callback(void);
+void getADCvalue(void);
 
 /* USER CODE END PFP */
 
@@ -176,40 +177,16 @@ int main(void)
 
   HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET); // Power LED ON
 
+  display_value = 0.4f * 100;
+  getADCvalue(); // Get ADC value
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  //ADC polling
-	  if (HAL_ADC_Start(&hadc1) != HAL_OK)
-	    {
-	      /* Start Error */
-	      Error_Handler();
-	    }
 
-	  for(uint16_t i = 0; i<255; i++)
-	  {
-		  HAL_ADC_PollForConversion(&hadc1, 1000);
-		  ADC_buffer[i] = HAL_ADC_GetValue(&hadc1);
-	  }
-
-	  ADC_result_temp = 0;
-
-	  for(uint16_t i = 0; i<255; i++)
-	  {
-		  ADC_result_temp += ADC_buffer[i];
-		  ADC_result_temp = ADC_result_temp/2;
-	  }
-
-	  ADC_result = ADC_result_temp;
-
-	  HAL_ADC_Stop(&hadc1);
-
-    display_value = 0.4f * 100;
-
-    buttonState = HAL_GPIO_ReadPin(UserButton_GPIO_Port, UserButton_Pin);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -644,9 +621,9 @@ void TIM3_callback(void)
   }
 }
 
-int countDigits(int num) { //for 7 segment display
+uint8_t countDigits(uint8_t num) { //for 7 segment display
   if (num == 0) return 1; // Special case for 0
-  return (int)log10(abs(num)) + 1;
+  return (uint8_t)log10(abs(num)) + 1;
 }
 
 void TIM2_callback(void)
@@ -678,6 +655,34 @@ void TIM4_callback(void)
 void userButton_callback(void)
 {
   buttonCounter++;
+}
+
+void getADCvalue(void)
+{
+    //ADC polling
+    if (HAL_ADC_Start(&hadc1) != HAL_OK)
+	  {
+	    /* Start Error */
+	    Error_Handler();
+	  }
+
+	for(uint16_t i = 0; i<255; i++)
+	{
+	  HAL_ADC_PollForConversion(&hadc1, 1000);
+	  ADC_buffer[i] = HAL_ADC_GetValue(&hadc1);
+	}
+
+	ADC_result_temp = 0;
+
+	for(uint16_t i = 0; i<255; i++)
+	{
+	  ADC_result_temp += ADC_buffer[i];
+	  ADC_result_temp = ADC_result_temp/2;
+	}
+
+	ADC_result = ADC_result_temp;
+
+	HAL_ADC_Stop(&hadc1);
 }
 
 /* USER CODE END 4 */
