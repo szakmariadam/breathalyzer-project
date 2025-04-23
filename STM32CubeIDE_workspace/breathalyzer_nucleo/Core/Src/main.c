@@ -71,6 +71,9 @@ uint8_t maxDigits = 0;
 GPIO_PinState buttonState = GPIO_PIN_RESET;
 float BAC = 0.0f;
 uint8_t warmedUp = 0;
+uint16_t ADC_measure_max = 0;
+uint8_t measuring = 0; // Flag for measuring state
+uint32_t measureCounter = 0; // Counter for measuring time
 
 sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -106,7 +109,6 @@ void TIM4_callback(void);
 void UserButton_callback(void);
 void getADCvalue(void);
 void warmup(void);
-void measure(void);
 
 /* USER CODE END PFP */
 
@@ -158,9 +160,7 @@ int main(void)
     Error_Handler();
   }
 
-  //HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
-  //HAL_TIM_Base_Start_IT(&htim4);
 
   if(HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1) != HAL_OK)
   	{
@@ -593,6 +593,36 @@ void setDigit(uint8_t value, uint8_t digit)
 
 void TIM3_callback(void)
 {
+  //measure
+  if(measuring)
+  {
+    //measure start
+    getADCvalue(); // Get ADC value
+    if(ADC_result > ADC_measure_max)
+    {
+      ADC_measure_max = ADC_result; // Get max ADC value
+    }
+    
+    measureCounter++;
+    
+    switch (measureCounter)
+    {
+    case 1:
+      ADC_measure_max = 0; // Reset max ADC value
+      break;
+    case 10000:
+      measuring = 0; // Stop measuring
+      measureCounter = 0; // Reset counter
+
+      //TODO: Calculate BAC value
+
+      //HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
+    default:
+      break;
+    }
+  }
+
+  //set display
   if (digit<=3)
   {
 
@@ -643,7 +673,10 @@ void TIM4_callback(void)
 void userButton_callback(void)
 {
   if(warmedUp){
-    measure(); // Measure BAC
+    //HAL_TIM_Base_Stop_IT(&htim4); // stop and reset standby timeout
+    //__HAL_TIM_SET_COUNTER(&htim4, 0);
+
+    measuring = 1; // Start measuring
   }
 }
 
@@ -689,21 +722,11 @@ void warmup(void)
 
   warmedUp = 1;
 
-  HAL_TIM_Base_Start_IT(&htim4); // standby timeout
+  //HAL_TIM_Base_Start_IT(&htim4); // standby timeout
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
-}
-
-void measure(void)
-{
-  HAL_TIM_Base_Stop_IT(&htim4); // stop and reset standby timeout
-  __HAL_TIM_SET_COUNTER(&htim4, 0);
-
-  display_value = 0.1f * 100;
-
-  HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
 }
 
 /* USER CODE END 4 */
