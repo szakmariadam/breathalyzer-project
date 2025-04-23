@@ -681,7 +681,7 @@ void warmup(void)
   display_value = 0.0f * 100;
   getADCvalue(); // Get ADC value
 
-  while(ADC_result <= 2400)
+  while(ADC_result <= 2300)
   {
     HAL_Delay(1000);
     getADCvalue(); // Get ADC value
@@ -698,9 +698,12 @@ void warmup(void)
 
 void measure(void)
 {
+  HAL_TIM_Base_Stop_IT(&htim4); // stop and reset standby timeout
+  __HAL_TIM_SET_COUNTER(&htim4, 0);
 
   display_value = 0.1f * 100;
 
+  HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
 }
 
 /* USER CODE END 4 */
