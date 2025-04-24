@@ -42,8 +42,9 @@ typedef struct{
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define VC 2.29f //(3.3/100)*70
-#define VCC 3.13f //manually calibrated
+#define VC 2.27f //manually calibrated
+#define VCC 3.0f //manually calibrated
+#define RL 100000.0f //not calibrated
 
 /* USER CODE END PD */
 
@@ -76,6 +77,7 @@ uint16_t ADC_measure_max = 0;
 uint8_t measuring = 0; // Flag for measuring state
 uint32_t measureCounter = 0; // Counter for measuring time
 float sensorVoltage = 0.0f;
+float RLVoltage = 0.0f;
 uint32_t sensorResistance = 0;
 
 sevenSegmentDriver driverCode[11] = {
@@ -614,6 +616,7 @@ void TIM3_callback(void)
       ADC_measure_max = 0; // Reset max ADC value
       sensorVoltage = 0.0f; // Reset sensor voltage
       sensorResistance = 0; // Reset sensor resistance
+      RLVoltage = 0.0f;
 
       break;
     case 10000:
@@ -622,8 +625,9 @@ void TIM3_callback(void)
 
 
       //TODO: Calculate BAC value
-      sensorVoltage = VC - (ADC_measure_max * VCC) / 4096.0f; // Convert ADC value to voltage
-      sensorResistance = sensorVoltage * 100000.0f / (VC - sensorVoltage); // Calculate sensor resistance
+      RLVoltage = (ADC_measure_max * VCC) / 4096.0f; // Convert ADC value to RL voltage
+      sensorVoltage = VC - RLVoltage; // Convert RL voltage to sensor voltage
+      sensorResistance = sensorVoltage * RL / (VC - sensorVoltage); // Calculate sensor resistance
       display_value = sensorVoltage * 100; // Convert voltage to display value
 
       //HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
@@ -722,9 +726,9 @@ void warmup(void)
 {
 
   display_value = 0.0f * 100;
-  getADCvalue(); // Get ADC value
+  //getADCvalue(); // Get ADC value
 
-  while(ADC_result <= 2300)
+  while(ADC_result <= 2200)
   {
     HAL_Delay(1000);
     getADCvalue(); // Get ADC value
