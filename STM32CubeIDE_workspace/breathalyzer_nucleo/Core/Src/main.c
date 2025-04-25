@@ -65,7 +65,6 @@ TIM_HandleTypeDef htim4;
 
 uint16_t ADC_result_temp;
 uint16_t ADC_result;
-uint16_t ADC_buffer[256];
 uint16_t display_value = 0;
 uint16_t display_temp = 0;
 uint8_t digit = 5; //iterator for 7-segment display, starts from 5
@@ -628,7 +627,7 @@ void TIM3_callback(void)
       HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
 
       break;
-    case 10000:
+    case 7000:
       measuring = 0; // Stop measuring
       measureCounter = 0; // Reset counter
 
@@ -716,25 +715,20 @@ void userButton_callback(void)
 
 void getADCvalue(void)
 {
-    //ADC polling
-    if (HAL_ADC_Start(&hadc1) != HAL_OK)
-	  {
-	    /* Start Error */
-	    Error_Handler();
-	  }
+  //ADC polling
+  if (HAL_ADC_Start(&hadc1) != HAL_OK)
+	{
+	  /* Start Error */
+	  Error_Handler();
+	}
+
+  ADC_result_temp = 0;
 
 	for(uint16_t i = 0; i<255; i++)
 	{
 	  HAL_ADC_PollForConversion(&hadc1, 1000);
-	  ADC_buffer[i] = HAL_ADC_GetValue(&hadc1);
-	}
-
-	ADC_result_temp = 0;
-
-	for(uint16_t i = 0; i<255; i++)
-	{
-	  ADC_result_temp += ADC_buffer[i];
-	  ADC_result_temp = ADC_result_temp/2;
+	  ADC_result_temp += HAL_ADC_GetValue(&hadc1);
+    ADC_result_temp = ADC_result_temp/2;
 	}
 
 	ADC_result = ADC_result_temp;
