@@ -43,7 +43,7 @@ typedef struct{
 /* USER CODE BEGIN PD */
 
 #define VC 2.27f //manually calibrated
-#define VCC 3.0f //manually calibrated
+#define VCC 3.06f //manually calibrated
 #define RL 100000.0f //not calibrated
 
 /* USER CODE END PD */
@@ -79,6 +79,7 @@ uint32_t measureCounter = 0; // Counter for measuring time
 float sensorVoltage = 0.0f;
 float RLVoltage = 0.0f;
 uint32_t sensorResistance = 0;
+uint32_t buzzerCounter = 0; // Counter for buzzer time
 
 sevenSegmentDriver driverCode[11] = {
   {GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET, GPIO_PIN_RESET}, //0
@@ -114,6 +115,7 @@ void TIM4_callback(void);
 void UserButton_callback(void);
 void getADCvalue(void);
 void warmup(void);
+void stopBuzzer(void);
 
 /* USER CODE END PFP */
 
@@ -165,6 +167,7 @@ int main(void)
     Error_Handler();
   }
 
+  HAL_TIM_Base_Start_IT(&htim2);
   HAL_TIM_Base_Start_IT(&htim3);
 
   if(HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1) != HAL_OK)
@@ -553,6 +556,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(UserButton_GPIO_Port, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
   /* USER CODE BEGIN MX_GPIO_Init_2 */
   /* USER CODE END MX_GPIO_Init_2 */
 }
@@ -618,6 +625,8 @@ void TIM3_callback(void)
       sensorResistance = 0; // Reset sensor resistance
       RLVoltage = 0.0f;
 
+      HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
+
       break;
     case 10000:
       measuring = 0; // Stop measuring
@@ -630,6 +639,7 @@ void TIM3_callback(void)
       sensorResistance = sensorVoltage * RL / (VC - sensorVoltage); // Calculate sensor resistance
       display_value = sensorVoltage * 100; // Convert voltage to display value
 
+      HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
       //HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
     default:
       break;
@@ -658,9 +668,19 @@ uint8_t countDigits(uint8_t num) { //for 7 segment display
   return (uint8_t)log10(abs(num)) + 1;
 }
 
+void stopBuzzer(void)
+{
+  HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1); // Stop buzzer
+}
+
 void TIM2_callback(void)
 {
-  
+  buzzerCounter++;
+  if(buzzerCounter >= 500) // 0.5 second
+  {
+    buzzerCounter = 0; // Reset counter
+    stopBuzzer(); // Stop buzzer
+  }
 }
 
 void TIM4_callback(void)
@@ -735,6 +755,7 @@ void warmup(void)
   }
 
   warmedUp = 1;
+  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
 
   //HAL_TIM_Base_Start_IT(&htim4); // standby timeout
 
