@@ -45,6 +45,7 @@ typedef struct{
 #define VC 2.27f //manually calibrated
 #define VCC 3.06f //manually calibrated
 #define RL 100000.0f //not calibrated
+#define R0 26500 //calibrated
 
 /* USER CODE END PD */
 
@@ -70,7 +71,8 @@ uint16_t display_temp = 0;
 uint8_t digit = 5; //iterator for 7-segment display, starts from 5
 uint8_t maxDigits = 0;
 GPIO_PinState buttonState = GPIO_PIN_RESET;
-float BAC = 0.0f;
+float BrAC = 0.0f;  //mg/L
+float BAC = 0.0f; //%
 uint8_t warmedUp = 0;
 uint16_t ADC_measure_max = 0;
 uint8_t measuring = 0; // Flag for measuring state
@@ -636,7 +638,10 @@ void TIM3_callback(void)
       RLVoltage = (ADC_measure_max * VCC) / 4096.0f; // Convert ADC value to RL voltage
       sensorVoltage = VC - RLVoltage; // Convert RL voltage to sensor voltage
       sensorResistance = sensorVoltage * RL / (VC - sensorVoltage); // Calculate sensor resistance
-      display_value = sensorVoltage * 100; // Convert voltage to display value
+      BrAC = 0.366 * pow((10*sensorResistance)/R0, -1.509); //sensor characteristics from datasheet
+      BAC = ((BrAC*2100)/1000)/10;  //2100 BrAC to BAC conversion factor
+
+      display_value = BAC * 100; // Convert voltage to display value
 
       HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
       //HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
