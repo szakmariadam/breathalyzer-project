@@ -3,3 +3,7 @@
 /STM32CubeIDE_workspace/breathalyzer_nucleo/build
 /STM32CubeIDE_workspace/breathalyzer_nucleo/build
 /STM32CubeIDE_workspace/breathalyzer_nucleo/build
+
+pcb/breathalyzer/fp-info-cache
+
+pcb/breathalyzer/breathalyzer-backups/
