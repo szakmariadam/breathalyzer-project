@@ -5,6 +5,374 @@
 	(uuid "e92d6a20-f7e6-42bc-b7eb-52ddd833ed75")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:Conn_01x07_Pin"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Conn_01x07_Pin"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic connector, single row, 01x07, script generated"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x07_Pin_1_1"
+				(rectangle
+					(start 0.8636 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 0.8636 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 7.62) (xy 0.8636 7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 5.08) (xy 0.8636 5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 0.8636 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy 0.8636 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 0.8636 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -5.08) (xy 0.8636 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -7.62) (xy 0.8636 -7.62)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at 5.08 7.62 180)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 5.08 180)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 3.81)
+					(name "Pin_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 3.81)
+					(name "Pin_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -5.08 180)
+					(length 3.81)
+					(name "Pin_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -7.62 180)
+					(length 3.81)
+					(name "Pin_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:Battery"
 			(pin_numbers
 				(hide yes)
@@ -1908,230 +2276,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "breathalyzer:10129379-906002BLF"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J"
-				(at 16.51 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "10129379-906002BLF"
-				(at 16.51 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "HDRRA6W67P0X254_1X6_1524X254X241P"
-				(at 16.51 -94.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/10129379.pdf"
-				(at 16.51 -194.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Description" "EconoStik 2.54mm, Board to Board Connector, Unshrouded Right Angled Header, Through Hole, Single Row, 6 Positions, 2.54 mm (0.100in) Pitch."
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Height" "2.41"
-				(at 16.51 -394.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Part Number" "649-1012937990602BLF"
-				(at 16.51 -494.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/10129379-906002BLF?qs=0lQeLiL1qyajiejozaUUsw%3D%3D"
-				(at 16.51 -594.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Name" "Amphenol"
-				(at 16.51 -694.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(property "Manufacturer_Part_Number" "10129379-906002BLF"
-				(at 16.51 -794.92 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-					(hide yes)
-				)
-			)
-			(symbol "10129379-906002BLF_1_1"
-				(rectangle
-					(start 5.08 2.54)
-					(end 15.24 -15.24)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 0)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 0)
-					(length 5.08)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -10.16 0)
-					(length 5.08)
-					(name "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -12.7 0)
-					(length 5.08)
-					(name "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "breathalyzer:TPS3840DL25DBVR"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3055,7 +3199,7 @@
 		(uuid "c2e1a594-6aeb-456a-b793-53ceb2f9dd54")
 	)
 	(junction
-		(at 36.83 157.48)
+		(at 35.56 162.56)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c3154798-756e-4720-bcf7-774400b288a9")
@@ -3085,7 +3229,7 @@
 		(uuid "f787662f-75e1-4448-9e00-f03eea9006f1")
 	)
 	(junction
-		(at 36.83 176.53)
+		(at 35.56 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f8d9a882-3784-41f2-a06f-b320658d5459")
@@ -3220,7 +3364,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 166.37) (xy 36.83 176.53)
+			(xy 35.56 171.45) (xy 35.56 181.61)
 		)
 		(stroke
 			(width 0)
@@ -3370,7 +3514,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 176.53) (xy 36.83 176.53)
+			(xy 29.21 181.61) (xy 35.56 181.61)
 		)
 		(stroke
 			(width 0)
@@ -3390,7 +3534,7 @@
 	)
 	(wire
 		(pts
-			(xy 35.56 133.35) (xy 38.1 133.35)
+			(xy 30.48 139.7) (xy 33.02 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3470,7 +3614,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 157.48) (xy 54.61 157.48)
+			(xy 35.56 162.56) (xy 53.34 162.56)
 		)
 		(stroke
 			(width 0)
@@ -3510,17 +3654,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 179.07) (xy 54.61 179.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68e0e000-41a1-4007-8d46-d76777285dbf")
-	)
-	(wire
-		(pts
-			(xy 36.83 156.21) (xy 36.83 157.48)
+			(xy 35.56 161.29) (xy 35.56 162.56)
 		)
 		(stroke
 			(width 0)
@@ -3680,16 +3814,6 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 181.61) (xy 54.61 181.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a3485d62-09f3-4735-9695-5a502d3ecb96")
-	)
-	(wire
-		(pts
 			(xy 243.84 24.13) (xy 250.19 24.13)
 		)
 		(stroke
@@ -3730,7 +3854,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 157.48) (xy 36.83 158.75)
+			(xy 35.56 162.56) (xy 35.56 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3800,7 +3924,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 133.35) (xy 50.8 133.35)
+			(xy 43.18 139.7) (xy 45.72 139.7)
 		)
 		(stroke
 			(width 0)
@@ -3810,7 +3934,7 @@
 	)
 	(wire
 		(pts
-			(xy 54.61 157.48) (xy 54.61 168.91)
+			(xy 53.34 162.56) (xy 53.34 173.99)
 		)
 		(stroke
 			(width 0)
@@ -3950,7 +4074,7 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 176.53) (xy 54.61 176.53)
+			(xy 35.56 181.61) (xy 53.34 181.61)
 		)
 		(stroke
 			(width 0)
@@ -4048,7 +4172,7 @@
 	)
 	(global_label "SWDIO"
 		(shape input)
-		(at 48.26 181.61 180)
+		(at 53.34 189.23 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4058,7 +4182,7 @@
 		)
 		(uuid "53938693-8bfc-4630-bc6b-9a3faaaceda9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.4086 181.61 0)
+			(at 44.4886 189.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4114,7 +4238,7 @@
 	)
 	(global_label "SWCLK"
 		(shape input)
-		(at 48.26 179.07 180)
+		(at 53.34 186.69 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4124,7 +4248,7 @@
 		)
 		(uuid "a2417c54-f0c8-4362-9a10-0cdb1dc5b401")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.0458 179.07 0)
+			(at 44.1258 186.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4136,7 +4260,7 @@
 	)
 	(global_label "USART1_RX"
 		(shape input)
-		(at 54.61 171.45 180)
+		(at 53.34 176.53 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4146,7 +4270,7 @@
 		)
 		(uuid "a7fc8028-428b-4570-8557-4d785f4cd9f0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.102 171.45 0)
+			(at 39.832 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4158,7 +4282,7 @@
 	)
 	(global_label "BOOT0"
 		(shape input)
-		(at 30.48 176.53 180)
+		(at 29.21 181.61 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4168,7 +4292,7 @@
 		)
 		(uuid "bcead923-6701-4b6b-b99d-ebcb5f2cd1ad")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 21.3867 176.53 0)
+			(at 20.1167 181.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4180,7 +4304,7 @@
 	)
 	(global_label "NRST"
 		(shape input)
-		(at 35.56 133.35 180)
+		(at 30.48 139.7 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4190,7 +4314,7 @@
 		)
 		(uuid "e469ad24-af75-45a8-87fb-46865a8a2b48")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 27.7972 133.35 0)
+			(at 22.7172 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4202,7 +4326,7 @@
 	)
 	(global_label "USART1_TX"
 		(shape input)
-		(at 54.61 173.99 180)
+		(at 53.34 179.07 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4212,7 +4336,7 @@
 		)
 		(uuid "ff6feb3a-9143-4a4e-b4d1-80cd83e54075")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 41.4044 173.99 0)
+			(at 40.1344 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4362,140 +4486,6 @@
 			(project "breathalyzer"
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "breathalyzer:10129379-906002BLF")
-		(at 54.61 168.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "11ad2c51-4099-4055-a05f-0ddb3c0a50b7")
-		(property "Reference" "J1"
-			(at 71.12 173.9899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10129379-906002BLF"
-			(at 71.12 176.5299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "HDRRA6W67P0X254_1X6_1524X254X241P"
-			(at 71.12 263.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/10129379.pdf"
-			(at 71.12 363.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "EconoStik 2.54mm, Board to Board Connector, Unshrouded Right Angled Header, Through Hole, Single Row, 6 Positions, 2.54 mm (0.100in) Pitch."
-			(at 54.61 168.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "2.41"
-			(at 71.12 563.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "649-1012937990602BLF"
-			(at 71.12 663.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Amphenol-FCI/10129379-906002BLF?qs=0lQeLiL1qyajiejozaUUsw%3D%3D"
-			(at 71.12 763.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Amphenol"
-			(at 71.12 863.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "10129379-906002BLF"
-			(at 71.12 963.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(pin "3"
-			(uuid "668e5b55-516c-4570-8923-5d01ef8e14c4")
-		)
-		(pin "5"
-			(uuid "f0838310-4ed9-45c9-ac84-eff996d132b3")
-		)
-		(pin "1"
-			(uuid "22de9614-02d9-42fc-91ff-156b8b42ae79")
-		)
-		(pin "2"
-			(uuid "16cf07bf-7154-4e7b-b992-82ab84f7377a")
-		)
-		(pin "4"
-			(uuid "8346cbd3-38d1-489c-a276-32f79a6a4f89")
-		)
-		(pin "6"
-			(uuid "3ca4a47b-b566-4c92-8172-9e89614d5445")
-		)
-		(instances
-			(project ""
-				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
-					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -5181,6 +5171,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3V3")
+		(at 53.34 184.15 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "67a13497-8cb2-477d-87e5-6ad89f2824f8")
+		(property "Reference" "#PWR014"
+			(at 57.15 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 49.53 184.1499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 53.34 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 53.34 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 53.34 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e00d0413-86d9-462f-91ab-1ceff47f83c3")
+		)
+		(instances
+			(project ""
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 259.08 92.71 0)
 		(unit 1)
@@ -5252,7 +5309,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 43.18 133.35 0)
+		(at 38.1 139.7 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5261,7 +5318,7 @@
 		(fields_autoplaced yes)
 		(uuid "6f6ecce6-0005-4769-8126-1b20bf4f6ea1")
 		(property "Reference" "SW1"
-			(at 43.18 125.73 0)
+			(at 38.1 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5269,7 +5326,7 @@
 			)
 		)
 		(property "Value" "PTS636SK43SMTR"
-			(at 43.18 128.27 0)
+			(at 38.1 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5277,7 +5334,7 @@
 			)
 		)
 		(property "Footprint" "breathalyzer:PTS636SM43JSMTRLFS"
-			(at 43.18 128.27 0)
+			(at 38.1 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5286,7 +5343,7 @@
 			)
 		)
 		(property "Datasheet" "https://hu.mouser.com/ProductDetail/CK/PTS636SK43SMTR-LFS?qs=jcD%2FCkGBYePd2dW0Qz%252BKmg%3D%3D"
-			(at 43.18 128.27 0)
+			(at 38.1 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5295,7 +5352,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 43.18 133.35 0)
+			(at 38.1 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5320,7 +5377,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 50.8 133.35 90)
+		(at 45.72 139.7 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5328,7 +5385,7 @@
 		(dnp no)
 		(uuid "72e9fb73-6e91-4249-8f0f-1e95edc21744")
 		(property "Reference" "#PWR013"
-			(at 57.15 133.35 0)
+			(at 52.07 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5337,7 +5394,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 55.88 133.35 0)
+			(at 50.8 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5345,7 +5402,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.8 133.35 0)
+			(at 45.72 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5354,7 +5411,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.8 133.35 0)
+			(at 45.72 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5363,7 +5420,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 50.8 133.35 0)
+			(at 45.72 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5443,6 +5500,91 @@
 			(project ""
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x07_Pin")
+		(at 58.42 181.61 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "85e7c811-f1ca-44da-a061-7d01bb11e6da")
+		(property "Reference" "J1"
+			(at 59.69 180.3399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_01x07_Pin"
+			(at 59.69 182.8799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "breathalyzer:HDRRA7W66P0X254_1X7_1778X229X274P"
+			(at 58.42 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 58.42 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x07, script generated"
+			(at 58.42 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "fdae3593-9abe-4e63-bdd2-de2b4b93ffcc")
+		)
+		(pin "1"
+			(uuid "e9d2fe3f-4f62-47f6-8398-be682a53a212")
+		)
+		(pin "6"
+			(uuid "e1c06ced-b59d-4a17-ae06-27650d5bb877")
+		)
+		(pin "2"
+			(uuid "b10ca53e-9a86-4806-b128-34fa6b89df01")
+		)
+		(pin "4"
+			(uuid "e0ea1940-7cf4-4621-8ca7-de4c54aeefdc")
+		)
+		(pin "5"
+			(uuid "173b2d9d-c4b9-4337-ac0b-e2df96dba2a8")
+		)
+		(pin "3"
+			(uuid "3ff96fa8-9ceb-42bb-bea3-5a1457b072d3")
+		)
+		(instances
+			(project ""
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -5814,7 +5956,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 36.83 156.21 180)
+		(at 35.56 161.29 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5823,7 +5965,7 @@
 		(fields_autoplaced yes)
 		(uuid "9fbd73ad-0fbe-405d-a64c-d1d3485b3c7a")
 		(property "Reference" "#PWR012"
-			(at 36.83 149.86 0)
+			(at 35.56 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5832,7 +5974,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 36.83 151.13 0)
+			(at 35.56 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5840,7 +5982,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 36.83 156.21 0)
+			(at 35.56 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5849,7 +5991,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 36.83 156.21 0)
+			(at 35.56 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5858,7 +6000,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 36.83 156.21 0)
+			(at 35.56 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6616,6 +6758,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 35.56 167.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ed6c3d84-4d3c-4504-91f1-0fe1b2ffd18f")
+		(property "Reference" "R4"
+			(at 38.1 166.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 38.1 168.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 37.338 167.64 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Welwyn-Components-TT-Electronics/WCR0603-10KFI?qs=sGAEpiMZZMtlubZbdhIBIJtQxnYsq7hX%2FArN2fd%252BWZ0%3D"
+			(at 35.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 35.56 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1a455274-e268-4c44-87d6-4df45e2918f4")
+		)
+		(pin "2"
+			(uuid "a836f4e7-05e7-425e-a5ee-7fe517d82ff6")
+		)
+		(instances
+			(project "breathalyzer"
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+BATT")
 		(at 130.81 27.94 0)
 		(unit 1)
@@ -6742,76 +6954,6 @@
 			(project "breathalyzer"
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 36.83 162.56 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fa0261f6-f916-4a2c-9527-5e924a3b9994")
-		(property "Reference" "R4"
-			(at 39.37 161.2899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "4k7"
-			(at 39.37 163.8299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
-			(at 38.608 162.56 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Vishay-Dale/CRCW12064K70FKEBC?qs=sGAEpiMZZMvdGkrng054t7z4BkURc4LzGCnZotS1xuCyIOKWW3cRXQ%3D%3D"
-			(at 36.83 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 36.83 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "89d056a0-7907-41a3-ad7f-0a9212ce7e30")
-		)
-		(pin "2"
-			(uuid "d6e52427-0855-4451-ad50-5685a8e13a1b")
-		)
-		(instances
-			(project "breathalyzer"
-				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
-					(reference "R4")
 					(unit 1)
 				)
 			)
