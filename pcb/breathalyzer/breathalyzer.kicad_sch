@@ -3187,6 +3187,12 @@
 		(uuid "b3f5d532-784d-4e3a-bbdb-d687bfda1db3")
 	)
 	(junction
+		(at 104.14 187.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b510eab0-1220-476c-9d44-97c3efa82644")
+	)
+	(junction
 		(at 46.99 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3235,8 +3241,16 @@
 		(uuid "f8d9a882-3784-41f2-a06f-b320658d5459")
 	)
 	(no_connect
+		(at 29.21 59.69)
+		(uuid "248b2109-3888-4958-8eec-8532e76923ec")
+	)
+	(no_connect
 		(at 274.32 49.53)
 		(uuid "2f96903b-fa12-4851-a1d0-93407091be5e")
+	)
+	(no_connect
+		(at 29.21 57.15)
+		(uuid "8960d915-ac5e-454d-a17b-24153a97584b")
 	)
 	(no_connect
 		(at 274.32 46.99)
@@ -3534,7 +3548,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 139.7) (xy 33.02 139.7)
+			(xy 31.75 147.32) (xy 34.29 147.32)
 		)
 		(stroke
 			(width 0)
@@ -3651,6 +3665,26 @@
 			(type default)
 		)
 		(uuid "68365127-5e6e-4aa9-8695-f7a0d6de874f")
+	)
+	(wire
+		(pts
+			(xy 97.79 187.96) (xy 104.14 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69e19183-236c-4de8-9e47-1aa12aac0b53")
+	)
+	(wire
+		(pts
+			(xy 104.14 187.96) (xy 107.95 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ad75e4d-c496-476c-aea3-1777520b23fe")
 	)
 	(wire
 		(pts
@@ -3854,6 +3888,16 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 177.8) (xy 104.14 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2350642-e162-453a-91fb-ea0ae74565d2")
+	)
+	(wire
+		(pts
 			(xy 35.56 162.56) (xy 35.56 163.83)
 		)
 		(stroke
@@ -3924,7 +3968,7 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 139.7) (xy 45.72 139.7)
+			(xy 44.45 147.32) (xy 46.99 147.32)
 		)
 		(stroke
 			(width 0)
@@ -3971,6 +4015,16 @@
 			(type default)
 		)
 		(uuid "ca54ec45-fbe3-43ce-a17f-903e17f4b11e")
+	)
+	(wire
+		(pts
+			(xy 104.14 167.64) (xy 104.14 170.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfefe565-d094-46f1-bd64-d2febbdc5190")
 	)
 	(wire
 		(pts
@@ -4192,6 +4246,28 @@
 			)
 		)
 	)
+	(global_label "WKUP"
+		(shape input)
+		(at 97.79 187.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "53ad0853-fb3d-48f0-82af-48ae36904238")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 89.4829 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "BOOT0"
 		(shape input)
 		(at 29.21 52.07 180)
@@ -4227,6 +4303,28 @@
 		(uuid "7cd6274b-743f-4267-9d96-2ba73f49c765")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 72.8956 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "WKUP"
+		(shape input)
+		(at 59.69 46.99 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8708d354-e3f0-44d6-846b-23066f38afe9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 67.9971 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4304,7 +4402,7 @@
 	)
 	(global_label "NRST"
 		(shape input)
-		(at 30.48 139.7 180)
+		(at 31.75 147.32 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4314,7 +4412,7 @@
 		)
 		(uuid "e469ad24-af75-45a8-87fb-46865a8a2b48")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 22.7172 139.7 0)
+			(at 23.9872 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5035,6 +5133,143 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 104.14 173.99 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41fdc377-8c5c-4935-954a-88ad404717d2")
+		(property "Reference" "R5"
+			(at 106.68 172.7199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 106.68 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 105.918 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Welwyn-Components-TT-Electronics/WCR0603-10KFI?qs=sGAEpiMZZMtlubZbdhIBIJtQxnYsq7hX%2FArN2fd%252BWZ0%3D"
+			(at 104.14 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 104.14 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9c3c287d-5545-4920-87a6-e234222a5458")
+		)
+		(pin "2"
+			(uuid "4917817b-c872-44f6-84d0-e4a35faff9d1")
+		)
+		(instances
+			(project "breathalyzer"
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 118.11 187.96 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "51937f80-f910-4ec6-8546-505080e8254a")
+		(property "Reference" "#PWR016"
+			(at 114.3 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 121.92 187.9599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 118.11 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 118.11 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 118.11 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83ad5743-82c5-4cca-80bd-b9a2df392308")
+		)
+		(instances
+			(project "breathalyzer"
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Battery")
 		(at 130.81 36.83 0)
 		(unit 1)
@@ -5165,6 +5400,74 @@
 			(project "breathalyzer"
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 113.03 187.96 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "631851a7-50c9-4d06-aa13-381e26f7c1b0")
+		(property "Reference" "SW2"
+			(at 113.03 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "430162085826"
+			(at 113.03 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "breathalyzer:430162085826"
+			(at 113.03 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Wurth-Elektronik/430162085826?qs=sPbYRqrBIVnNOZ1%252Bx8%2F2Rw%3D%3D"
+			(at 113.03 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, two pins"
+			(at 113.03 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f26978f5-93b8-41f8-97cc-8e6b3576b8b7")
+		)
+		(pin "1"
+			(uuid "acf8078f-1c5e-46c2-9871-b27ab30e00a1")
+		)
+		(instances
+			(project "breathalyzer"
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -5309,7 +5612,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 38.1 139.7 0)
+		(at 39.37 147.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5318,7 +5621,7 @@
 		(fields_autoplaced yes)
 		(uuid "6f6ecce6-0005-4769-8126-1b20bf4f6ea1")
 		(property "Reference" "SW1"
-			(at 38.1 132.08 0)
+			(at 39.37 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5326,7 +5629,7 @@
 			)
 		)
 		(property "Value" "PTS636SK43SMTR"
-			(at 38.1 134.62 0)
+			(at 39.37 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5334,7 +5637,7 @@
 			)
 		)
 		(property "Footprint" "breathalyzer:PTS636SM43JSMTRLFS"
-			(at 38.1 134.62 0)
+			(at 39.37 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5343,7 +5646,7 @@
 			)
 		)
 		(property "Datasheet" "https://hu.mouser.com/ProductDetail/CK/PTS636SK43SMTR-LFS?qs=jcD%2FCkGBYePd2dW0Qz%252BKmg%3D%3D"
-			(at 38.1 134.62 0)
+			(at 39.37 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5352,7 +5655,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 38.1 139.7 0)
+			(at 39.37 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5377,7 +5680,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 45.72 139.7 90)
+		(at 46.99 147.32 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5385,7 +5688,7 @@
 		(dnp no)
 		(uuid "72e9fb73-6e91-4249-8f0f-1e95edc21744")
 		(property "Reference" "#PWR013"
-			(at 52.07 139.7 0)
+			(at 53.34 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5394,7 +5697,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.8 139.7 0)
+			(at 52.07 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5402,7 +5705,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 45.72 139.7 0)
+			(at 46.99 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5411,7 +5714,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 139.7 0)
+			(at 46.99 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5420,7 +5723,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 45.72 139.7 0)
+			(at 46.99 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6149,6 +6452,72 @@
 			(project "breathalyzer"
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "C6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 104.14 167.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "adc5691e-2f4e-4ab9-81a0-5d5b33e4647f")
+		(property "Reference" "#PWR015"
+			(at 104.14 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 104.14 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 104.14 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 104.14 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 104.14 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f457825-675c-4383-be28-d59ddf4a3305")
+		)
+		(instances
+			(project "breathalyzer"
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
