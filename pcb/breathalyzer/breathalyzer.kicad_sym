@@ -2,11 +2,11 @@
 	(version 20241209)
 	(generator "kicad_symbol_editor")
 	(generator_version "9.0")
-	(symbol "HEF4543BT,653"
+	(symbol "LCD-S301C31TR"
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(property "Reference" "IC"
+		(property "Reference" "DS"
 			(at 21.59 7.62 0)
 			(effects
 				(font
@@ -15,7 +15,7 @@
 				(justify left top)
 			)
 		)
-		(property "Value" "HEF4543BT,653"
+		(property "Value" "LCD-S301C31TR"
 			(at 21.59 5.08 0)
 			(effects
 				(font
@@ -24,7 +24,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" "HEF4543BT653"
+		(property "Footprint" "LCD-S301C31TR"
 			(at 21.59 -94.92 0)
 			(effects
 				(font
@@ -34,7 +34,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/HEF4543B.pdf"
+		(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/SFDatasheet-1/sf-00027351.pdf"
 			(at 21.59 -194.92 0)
 			(effects
 				(font
@@ -44,7 +44,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "HEF4543B - BCD to 7-segment latch/decoder/driver@en-us"
+		(property "Description" "INFOVUE 0.31\" character height, 3 digit LCD glass, TN, reflective, 24 pins"
 			(at 0 0 0)
 			(effects
 				(font
@@ -53,7 +53,7 @@
 				(hide yes)
 			)
 		)
-		(property "Height" "1.75"
+		(property "Height" ""
 			(at 21.59 -394.92 0)
 			(effects
 				(font
@@ -63,7 +63,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Part Number" "771-HEF4543BT653"
+		(property "Mouser Part Number" "696-LCD-S301C31TR"
 			(at 21.59 -494.92 0)
 			(effects
 				(font
@@ -73,7 +73,7 @@
 				(hide yes)
 			)
 		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Nexperia/HEF4543BT653?qs=me8TqzrmIYWAyDWbNh%252BB7A%3D%3D"
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Lumex/LCD-S301C31TR?qs=MaxZGLOdHCk5BnewmcNYnw%3D%3D"
 			(at 21.59 -594.92 0)
 			(effects
 				(font
@@ -83,7 +83,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Name" "Nexperia"
+		(property "Manufacturer_Name" "Lumex"
 			(at 21.59 -694.92 0)
 			(effects
 				(font
@@ -93,7 +93,7 @@
 				(hide yes)
 			)
 		)
-		(property "Manufacturer_Part_Number" "HEF4543BT,653"
+		(property "Manufacturer_Part_Number" "LCD-S301C31TR"
 			(at 21.59 -794.92 0)
 			(effects
 				(font
@@ -103,10 +103,10 @@
 				(hide yes)
 			)
 		)
-		(symbol "HEF4543BT,653_1_1"
+		(symbol "LCD-S301C31TR_1_1"
 			(rectangle
 				(start 5.08 2.54)
-				(end 20.32 -20.32)
+				(end 20.32 -30.48)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -118,7 +118,7 @@
 			(pin passive line
 				(at 0 0 0)
 				(length 5.08)
-				(name "~{LE}"
+				(name "COM"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -136,7 +136,7 @@
 			(pin passive line
 				(at 0 -2.54 0)
 				(length 5.08)
-				(name "D2"
+				(name "E1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -172,7 +172,7 @@
 			(pin passive line
 				(at 0 -7.62 0)
 				(length 5.08)
-				(name "D3"
+				(name "C1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -190,7 +190,7 @@
 			(pin passive line
 				(at 0 -10.16 0)
 				(length 5.08)
-				(name "D0"
+				(name "DP1"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -208,7 +208,7 @@
 			(pin passive line
 				(at 0 -12.7 0)
 				(length 5.08)
-				(name "PH"
+				(name "E2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -226,7 +226,7 @@
 			(pin passive line
 				(at 0 -15.24 0)
 				(length 5.08)
-				(name "BL"
+				(name "D2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -244,7 +244,7 @@
 			(pin passive line
 				(at 0 -17.78 0)
 				(length 5.08)
-				(name "VSS"
+				(name "C2"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -260,9 +260,225 @@
 				)
 			)
 			(pin passive line
+				(at 0 -20.32 0)
+				(length 5.08)
+				(name "DP2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "9"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -22.86 0)
+				(length 5.08)
+				(name "E3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "10"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -25.4 0)
+				(length 5.08)
+				(name "D3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "11"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 0 -27.94 0)
+				(length 5.08)
+				(name "C3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "12"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
 				(at 25.4 0 180)
 				(length 5.08)
-				(name "VDD"
+				(name "G1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "24"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -2.54 180)
+				(length 5.08)
+				(name "F1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "23"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -5.08 180)
+				(length 5.08)
+				(name "A1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "22"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -7.62 180)
+				(length 5.08)
+				(name "B1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "21"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -10.16 180)
+				(length 5.08)
+				(name "G2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "20"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -12.7 180)
+				(length 5.08)
+				(name "F2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "19"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -15.24 180)
+				(length 5.08)
+				(name "A2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "18"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -17.78 180)
+				(length 5.08)
+				(name "B2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "17"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin passive line
+				(at 25.4 -20.32 180)
+				(length 5.08)
+				(name "G3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -278,9 +494,9 @@
 				)
 			)
 			(pin passive line
-				(at 25.4 -2.54 180)
+				(at 25.4 -22.86 180)
 				(length 5.08)
-				(name "QF"
+				(name "F3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -296,9 +512,9 @@
 				)
 			)
 			(pin passive line
-				(at 25.4 -5.08 180)
+				(at 25.4 -25.4 180)
 				(length 5.08)
-				(name "QG"
+				(name "A3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -314,9 +530,9 @@
 				)
 			)
 			(pin passive line
-				(at 25.4 -7.62 180)
+				(at 25.4 -27.94 180)
 				(length 5.08)
-				(name "QE"
+				(name "B3"
 					(effects
 						(font
 							(size 1.27 1.27)
@@ -324,482 +540,6 @@
 					)
 				)
 				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 25.4 -10.16 180)
-				(length 5.08)
-				(name "QD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 25.4 -12.7 180)
-				(length 5.08)
-				(name "QC"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "11"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 25.4 -15.24 180)
-				(length 5.08)
-				(name "QB"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 25.4 -17.78 180)
-				(length 5.08)
-				(name "QA"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-		)
-		(embedded_fonts no)
-	)
-	(symbol "NHD-0108CZ-RN-GBW-33V"
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(property "Reference" "DS"
-			(at 24.13 7.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Value" "NHD-0108CZ-RN-GBW-33V"
-			(at 24.13 5.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Footprint" "NHD0108CZRNGBW33V"
-			(at 24.13 -94.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 24.13 -194.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Description" "LCD Character Display Modules & Accessories STN Gray Refl 69.0 x 27.0"
-			(at 0 0 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Height" "8.5"
-			(at 24.13 -394.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Part Number" "763-0108CZRNGBW33V"
-			(at 24.13 -494.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Newhaven-Display/NHD-0108CZ-RN-GBW-33V?qs=G49gCGQm93iEy%2FtH8g9UtA%3D%3D"
-			(at 24.13 -594.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Name" "Newhaven Display"
-			(at 24.13 -694.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(property "Manufacturer_Part_Number" "NHD-0108CZ-RN-GBW-33V"
-			(at 24.13 -794.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-				(hide yes)
-			)
-		)
-		(symbol "NHD-0108CZ-RN-GBW-33V_1_1"
-			(rectangle
-				(start 5.08 2.54)
-				(end 22.86 -25.4)
-				(stroke
-					(width 0.254)
-					(type default)
-				)
-				(fill
-					(type background)
-				)
-			)
-			(pin passive line
-				(at 0 0 0)
-				(length 5.08)
-				(name "DB7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "10"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -2.54 0)
-				(length 5.08)
-				(name "DB6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "9"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -5.08 0)
-				(length 5.08)
-				(name "DB5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "8"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -7.62 0)
-				(length 5.08)
-				(name "DB4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "7"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -10.16 0)
-				(length 5.08)
-				(name "E"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "6"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -12.7 0)
-				(length 5.08)
-				(name "R/W"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "5"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -15.24 0)
-				(length 5.08)
-				(name "RS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "4"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -17.78 0)
-				(length 5.08)
-				(name "V0"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -20.32 0)
-				(length 5.08)
-				(name "VDD"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 0 -22.86 0)
-				(length 5.08)
-				(name "VSS"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 27.94 0 180)
-				(length 5.08)
-				(name "DB3"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "14"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 27.94 -2.54 180)
-				(length 5.08)
-				(name "DB2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "13"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 27.94 -5.08 180)
-				(length 5.08)
-				(name "NC_1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "A1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 27.94 -7.62 180)
-				(length 5.08)
-				(name "NC_2"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "K1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 27.94 -10.16 180)
-				(length 5.08)
-				(name "DB1"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "12"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-			)
-			(pin passive line
-				(at 27.94 -12.7 180)
-				(length 5.08)
-				(name "DB0"
-					(effects
-						(font
-							(size 1.27 1.27)
-						)
-					)
-				)
-				(number "11"
 					(effects
 						(font
 							(size 1.27 1.27)
