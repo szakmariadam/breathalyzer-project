@@ -3158,6 +3158,143 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "breathalyzer:Buzzer"
+			(pin_names
+				(offset 0.0254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "BZ"
+				(at 3.81 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Buzzer"
+				(at 3.81 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at -0.635 2.54 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at -0.635 2.54 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Buzzer, polarized"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "quartz resonator ceramic"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*Buzzer*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Buzzer_0_1"
+				(arc
+					(start 0 3.175)
+					(mid 3.1612 0)
+					(end 0 -3.175)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.175) (xy 0 -3.175)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Buzzer_1_1"
+				(pin passive line
+					(at -2.54 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -2.54 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "breathalyzer:LCD-S301C31TR"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -5108,6 +5245,16 @@
 	)
 	(wire
 		(pts
+			(xy 209.55 146.05) (xy 212.09 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6718c6fd-ee4c-4a21-be63-c14e77edd109")
+	)
+	(wire
+		(pts
 			(xy 224.79 38.1) (xy 224.79 46.99)
 		)
 		(stroke
@@ -5215,6 +5362,16 @@
 			(type default)
 		)
 		(uuid "839352c6-fa61-4358-8324-d2d0ac7c87b1")
+	)
+	(wire
+		(pts
+			(xy 209.55 143.51) (xy 209.55 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95ced786-7ccf-4c53-9f53-3cd425ab979f")
 	)
 	(wire
 		(pts
@@ -5605,6 +5762,16 @@
 			(type default)
 		)
 		(uuid "eac19901-9ea8-4d77-b865-556b659ee547")
+	)
+	(wire
+		(pts
+			(xy 209.55 151.13) (xy 212.09 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebb24173-b75c-4653-9d11-521ef403eea4")
 	)
 	(wire
 		(pts
@@ -6832,6 +6999,28 @@
 			)
 		)
 	)
+	(global_label "BUZZER"
+		(shape input)
+		(at 209.55 151.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ba19506a-94e3-47eb-b019-e698c52c821a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 199.1263 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "LCD_B1"
 		(shape input)
 		(at 121.92 36.83 0)
@@ -7065,6 +7254,28 @@
 		(uuid "f6bf6572-eb00-4eaa-a96b-9f60920608f5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 131.739 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BUZZER"
+		(shape input)
+		(at 59.69 67.31 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f8ee1b24-8aa2-46b3-88fe-3aae76d8cf2b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 70.1137 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7916,6 +8127,76 @@
 			(project "breathalyzer"
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "breathalyzer:Buzzer")
+		(at 214.63 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "29ce6f3e-8c13-43fd-9a9a-0e6c37b957ff")
+		(property "Reference" "BZ1"
+			(at 218.44 147.3199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Buzzer"
+			(at 218.44 149.8599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "breathalyzer:CPT1414680T"
+			(at 213.995 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Same-Sky/CPT-14146-80T?qs=pBJMDPsKWf3pym5QY1xQDQ%3D%3D"
+			(at 213.995 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Buzzer"
+			(at 214.63 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4c55c902-7bc9-4761-be66-fd7babf3042f")
+		)
+		(pin "1"
+			(uuid "4fc644bf-92e0-4405-8093-2af5d9f3c8a3")
+		)
+		(instances
+			(project ""
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "BZ1")
 					(unit 1)
 				)
 			)
@@ -9290,6 +9571,72 @@
 			(project ""
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 209.55 143.51 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "91ef4b4b-5452-433b-adcc-5dacb854d7e8")
+		(property "Reference" "#PWR014"
+			(at 209.55 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 209.55 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 209.55 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 209.55 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 209.55 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26f834c7-028c-43a7-baa7-044ce7d815b9")
+		)
+		(instances
+			(project ""
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
