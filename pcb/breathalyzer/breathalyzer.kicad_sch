@@ -897,6 +897,296 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:Q_PMOS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q1"
+				(at 6.35 -1.2701 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Q_PMOS"
+				(at 6.35 1.2699 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
+				(at 5.08 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://hu.mouser.com/ProductDetail/Nexperia/PMV30XPEAR?qs=gH1BdSMZm8WIT7%2FCLtzVQg%3D%3D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "P-MOSFET transistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "PMOS P-MOS"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Q_PMOS_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.921 -0.381) (xy 3.683 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Q_PMOS_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:R"
 			(pin_numbers
 				(hide yes)
@@ -4670,12 +4960,6 @@
 		(uuid "38352720-9b82-451d-99f2-5523b988a55a")
 	)
 	(junction
-		(at 262.89 132.08)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4abe35bb-3c59-48e1-bfb8-88c26ae6c19e")
-	)
-	(junction
 		(at 224.79 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4712,7 +4996,7 @@
 		(uuid "736ebd15-bea2-472f-91e1-0e704ec51ad4")
 	)
 	(junction
-		(at 262.89 144.78)
+		(at 181.61 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7b54049f-d88b-4adf-9b35-2edc9b53493e")
@@ -4722,6 +5006,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "82a43d37-0b6a-4b7f-9d6d-90848cd55b09")
+	)
+	(junction
+		(at 181.61 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a630589-2757-4799-972d-c25ce59600ef")
 	)
 	(junction
 		(at 259.08 104.14)
@@ -4764,6 +5054,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c3154798-756e-4720-bcf7-774400b288a9")
+	)
+	(junction
+		(at 181.61 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c6895f96-564b-40c7-a782-e56a43b0e075")
 	)
 	(junction
 		(at 220.98 76.2)
@@ -4995,6 +5291,26 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 146.05) (xy 181.61 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cd83d5f-981c-457b-8caa-01a652d89236")
+	)
+	(wire
+		(pts
+			(xy 189.23 116.84) (xy 196.85 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2083f8d9-44e6-45cf-a2eb-730a8b45de33")
+	)
+	(wire
+		(pts
 			(xy 243.84 35.56) (xy 257.81 35.56)
 		)
 		(stroke
@@ -5045,7 +5361,7 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 132.08) (xy 262.89 133.35)
+			(xy 181.61 127) (xy 181.61 128.27)
 		)
 		(stroke
 			(width 0)
@@ -5145,6 +5461,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 139.7) (xy 181.61 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "45b19784-f390-4211-8e28-eefb297fbacf")
+	)
+	(wire
+		(pts
 			(xy 77.47 181.61) (xy 83.82 181.61)
 		)
 		(stroke
@@ -5185,6 +5511,16 @@
 	)
 	(wire
 		(pts
+			(xy 196.85 146.05) (xy 181.61 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "522f954c-0445-4a2d-84cf-f462c779a364")
+	)
+	(wire
+		(pts
 			(xy 220.98 85.09) (xy 220.98 76.2)
 		)
 		(stroke
@@ -5192,6 +5528,16 @@
 			(type default)
 		)
 		(uuid "558a070f-4b1a-4d00-adf0-4715f81c2f7c")
+	)
+	(wire
+		(pts
+			(xy 196.85 134.62) (xy 196.85 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56039ec2-b273-453f-8a8e-d464f40d63fa")
 	)
 	(wire
 		(pts
@@ -5245,7 +5591,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 146.05) (xy 212.09 146.05)
+			(xy 261.62 151.13) (xy 264.16 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5365,7 +5711,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 143.51) (xy 209.55 146.05)
+			(xy 261.62 148.59) (xy 261.62 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5412,16 +5758,6 @@
 			(type default)
 		)
 		(uuid "9f8c5823-a6b3-47cf-a8d6-8e6213ba1488")
-	)
-	(wire
-		(pts
-			(xy 262.89 144.78) (xy 262.89 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9fceda2a-1ffe-4512-9eb5-912cc44c7a5a")
 	)
 	(wire
 		(pts
@@ -5495,6 +5831,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 121.92) (xy 181.61 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1d15376-562f-468b-8f17-f17a82fad1f3")
+	)
+	(wire
+		(pts
 			(xy 39.37 172.72) (xy 39.37 182.88)
 		)
 		(stroke
@@ -5515,6 +5861,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 104.14) (xy 181.61 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b405f3c0-0622-4e42-a238-b8c2e6dc9777")
+	)
+	(wire
+		(pts
 			(xy 46.99 22.86) (xy 46.99 36.83)
 		)
 		(stroke
@@ -5532,6 +5888,16 @@
 			(type default)
 		)
 		(uuid "b52d18e1-d806-484e-9edc-04817b888abc")
+	)
+	(wire
+		(pts
+			(xy 196.85 116.84) (xy 196.85 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b97b62fe-a476-451a-846f-a9ccbe575170")
 	)
 	(wire
 		(pts
@@ -5725,7 +6091,7 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 143.51) (xy 262.89 144.78)
+			(xy 181.61 138.43) (xy 181.61 139.7)
 		)
 		(stroke
 			(width 0)
@@ -5755,17 +6121,7 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 129.54) (xy 262.89 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eac19901-9ea8-4d77-b865-556b659ee547")
-	)
-	(wire
-		(pts
-			(xy 209.55 151.13) (xy 212.09 151.13)
+			(xy 261.62 156.21) (xy 264.16 156.21)
 		)
 		(stroke
 			(width 0)
@@ -7001,7 +7357,7 @@
 	)
 	(global_label "BUZZER"
 		(shape input)
-		(at 209.55 151.13 180)
+		(at 261.62 156.21 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -7011,7 +7367,7 @@
 		)
 		(uuid "ba19506a-94e3-47eb-b019-e698c52c821a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 199.1263 151.13 0)
+			(at 251.1963 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7587,6 +7943,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 196.85 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "115fb2cb-c373-4051-94f2-9143821ba27d")
+		(property "Reference" "R8"
+			(at 199.39 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 199.39 132.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 195.072 130.81 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/YAGEO/RE0603FRE071KL?qs=sGAEpiMZZMvdGkrng054t8Pyfa06IR6dsyS4HwaJQp0We5mKgrvY1g%3D%3D"
+			(at 196.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 196.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aba99e07-f888-4fb0-addd-1cfc46515158")
+		)
+		(pin "2"
+			(uuid "2db56135-801b-4560-8238-813f471054b2")
+		)
+		(instances
+			(project "breathalyzer"
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "R8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+2V5")
 		(at 101.6 184.15 90)
 		(unit 1)
@@ -7654,8 +8080,81 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:Q_PMOS")
+		(at 184.15 116.84 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "12e00906-ef04-44c5-b85d-8b9187dea619")
+		(property "Reference" "Q1"
+			(at 177.8 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Q_PMOS"
+			(at 177.8 118.1099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
+			(at 179.07 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Nexperia/PMV30XPEAR?qs=gH1BdSMZm8WIT7%2FCLtzVQg%3D%3D"
+			(at 184.15 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-MOSFET transistor"
+			(at 184.15 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "b4c96c81-16ae-4f0a-9e86-4f3c3f69c3ab")
+		)
+		(pin "3"
+			(uuid "b2779d7f-3b1e-4abc-8192-2df6aa2b3537")
+		)
+		(pin "1"
+			(uuid "fc16a962-dd39-4530-b573-268ea384d54f")
+		)
+		(instances
+			(project ""
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 262.89 146.05 0)
+		(at 181.61 149.86 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7664,7 +8163,7 @@
 		(fields_autoplaced yes)
 		(uuid "188adffb-9756-402c-9194-12afc5d13a9c")
 		(property "Reference" "#PWR04"
-			(at 262.89 152.4 0)
+			(at 181.61 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7673,7 +8172,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 262.89 151.13 0)
+			(at 181.61 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7681,7 +8180,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 262.89 146.05 0)
+			(at 181.61 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7690,7 +8189,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 262.89 146.05 0)
+			(at 181.61 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7699,7 +8198,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 262.89 146.05 0)
+			(at 181.61 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8134,7 +8633,7 @@
 	)
 	(symbol
 		(lib_id "breathalyzer:Buzzer")
-		(at 214.63 148.59 0)
+		(at 266.7 153.67 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8143,7 +8642,7 @@
 		(fields_autoplaced yes)
 		(uuid "29ce6f3e-8c13-43fd-9a9a-0e6c37b957ff")
 		(property "Reference" "BZ1"
-			(at 218.44 147.3199 0)
+			(at 270.51 152.3999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8152,7 +8651,7 @@
 			)
 		)
 		(property "Value" "Buzzer"
-			(at 218.44 149.8599 0)
+			(at 270.51 154.9399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8161,7 +8660,7 @@
 			)
 		)
 		(property "Footprint" "breathalyzer:CPT1414680T"
-			(at 213.995 146.05 90)
+			(at 266.065 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8170,7 +8669,7 @@
 			)
 		)
 		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Same-Sky/CPT-14146-80T?qs=pBJMDPsKWf3pym5QY1xQDQ%3D%3D"
-			(at 213.995 146.05 90)
+			(at 266.065 151.13 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8179,7 +8678,7 @@
 			)
 		)
 		(property "Description" "Buzzer"
-			(at 214.63 148.59 0)
+			(at 266.7 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8542,7 +9041,7 @@
 	)
 	(symbol
 		(lib_id "Device:Battery")
-		(at 262.89 138.43 0)
+		(at 181.61 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8551,7 +9050,7 @@
 		(fields_autoplaced yes)
 		(uuid "565afb25-8484-4392-af79-ddf22c298e3c")
 		(property "Reference" "BT1"
-			(at 266.7 136.5884 0)
+			(at 185.42 131.5084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8560,7 +9059,7 @@
 			)
 		)
 		(property "Value" "Battery"
-			(at 266.7 139.1284 0)
+			(at 185.42 134.0484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8568,8 +9067,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 262.89 136.906 90)
+		(property "Footprint" "breathalyzer:SHDRRA2W50P0X200_1X2_600X770X525P"
+			(at 181.61 131.826 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8577,8 +9076,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 262.89 136.906 90)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/TE-Connectivity/440055-2?qs=DE9Qji9blsSmCkgS7fKI6w%3D%3D"
+			(at 181.61 131.826 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8587,7 +9086,7 @@
 			)
 		)
 		(property "Description" "Multiple-cell battery"
-			(at 262.89 138.43 0)
+			(at 181.61 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9578,7 +10077,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 209.55 143.51 180)
+		(at 261.62 148.59 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9587,7 +10086,7 @@
 		(fields_autoplaced yes)
 		(uuid "91ef4b4b-5452-433b-adcc-5dacb854d7e8")
 		(property "Reference" "#PWR014"
-			(at 209.55 137.16 0)
+			(at 261.62 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9596,7 +10095,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 209.55 138.43 0)
+			(at 261.62 143.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9604,7 +10103,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 209.55 143.51 0)
+			(at 261.62 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9613,7 +10112,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 143.51 0)
+			(at 261.62 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9622,7 +10121,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 209.55 143.51 0)
+			(at 261.62 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9978,7 +10477,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 262.89 144.78 90)
+		(at 181.61 139.7 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9987,7 +10486,7 @@
 		(fields_autoplaced yes)
 		(uuid "b2050f81-e607-4a28-8de5-6f157df2e095")
 		(property "Reference" "#FLG02"
-			(at 260.985 144.78 0)
+			(at 179.705 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9996,7 +10495,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 259.08 144.7799 90)
+			(at 177.8 139.6999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10005,7 +10504,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 262.89 144.78 0)
+			(at 181.61 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10014,7 +10513,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 262.89 144.78 0)
+			(at 181.61 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10023,7 +10522,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 262.89 144.78 0)
+			(at 181.61 139.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10179,7 +10678,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 262.89 132.08 90)
+		(at 181.61 127 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10188,7 +10687,7 @@
 		(fields_autoplaced yes)
 		(uuid "cb30afc5-e8dc-407a-8a38-9563789af9a6")
 		(property "Reference" "#FLG01"
-			(at 260.985 132.08 0)
+			(at 179.705 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10197,7 +10696,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 259.08 132.0799 90)
+			(at 177.8 126.9999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10206,7 +10705,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 262.89 132.08 0)
+			(at 181.61 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10215,7 +10714,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 262.89 132.08 0)
+			(at 181.61 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10224,7 +10723,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 262.89 132.08 0)
+			(at 181.61 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10910,7 +11409,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 262.89 129.54 0)
+		(at 181.61 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10919,7 +11418,7 @@
 		(fields_autoplaced yes)
 		(uuid "ed7feadf-416a-4c4b-9263-d1c72afa491e")
 		(property "Reference" "#PWR05"
-			(at 262.89 133.35 0)
+			(at 181.61 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10928,7 +11427,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 262.89 124.46 0)
+			(at 181.61 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10936,7 +11435,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 262.89 129.54 0)
+			(at 181.61 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10945,7 +11444,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 262.89 129.54 0)
+			(at 181.61 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10954,7 +11453,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 262.89 129.54 0)
+			(at 181.61 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
