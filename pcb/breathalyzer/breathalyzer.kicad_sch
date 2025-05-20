@@ -1560,36 +1560,32 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_Variable"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Device:R_Potentiometer"
 			(pin_names
-				(offset 0)
+				(offset 1.016)
+				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "R"
-				(at 2.54 -2.54 90)
+			(property "Reference" "RV"
+				(at -4.445 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "R_Variable"
-				(at -2.54 -1.27 90)
+			(property "Value" "R_Potentiometer"
+				(at -2.54 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at -1.778 0 90)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1606,7 +1602,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Variable resistor"
+			(property "Description" "Potentiometer"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1615,7 +1611,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "R res resistor variable potentiometer rheostat"
+			(property "ki_keywords" "resistor variable"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1624,7 +1620,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "R_*"
+			(property "ki_fp_filters" "Potentiometer*"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1633,10 +1629,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "R_Variable_0_1"
+			(symbol "R_Potentiometer_0_1"
 				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
+					(start 1.016 2.54)
+					(end -1.016 -2.54)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -1647,7 +1643,19 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 1.524) (xy 2.54 2.54) (xy 1.524 2.54) (xy 2.54 2.54) (xy -2.032 -2.032)
+						(xy 1.143 0) (xy 2.286 0.508) (xy 2.286 -0.508) (xy 1.143 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.524 0)
 					)
 					(stroke
 						(width 0)
@@ -1658,11 +1666,11 @@
 					)
 				)
 			)
-			(symbol "R_Variable_1_1"
+			(symbol "R_Potentiometer_1_1"
 				(pin passive line
 					(at 0 3.81 270)
 					(length 1.27)
-					(name "~"
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1680,7 +1688,25 @@
 				(pin passive line
 					(at 0 -3.81 90)
 					(length 1.27)
-					(name "~"
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 1.27)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3685,157 +3711,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SW_Push_1"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW2"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "430162085826"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "breathalyzer:430162085826"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://hu.mouser.com/ProductDetail/Wurth-Elektronik/430162085826?qs=sPbYRqrBIVnNOZ1%252Bx8%2F2Rw%3D%3D"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SW_Push_1_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 3.048)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SW_Push_1_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Simulation_SPICE:NPN"
 			(pin_numbers
 				(hide yes)
@@ -4220,6 +4095,295 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Switch:SW_Push_Dual"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW3"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_Push_Dual"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "breathalyzer:430162085826"
+				(at 0 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://hu.mouser.com/ProductDetail/Wurth-Elektronik/430162085826?qs=sPbYRqrBIVnNOZ1%252Bx8%2F2Rw%3D%3D"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, symbol, four pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_Dual_0_1"
+				(circle
+					(center -2.032 2.54)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -2.032 -2.54)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.81) (xy 0 5.588)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.048) (xy 0 3.556)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.032) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.016) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.508) (xy 0 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.508) (xy 0 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 2.54)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 3.81) (xy -2.54 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.27) (xy -2.54 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "SW_Push_Dual_1_1"
+				(rectangle
+					(start -3.175 5.715)
+					(end 3.175 -4.445)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 2.54 180)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5578,12 +5742,6 @@
 		(uuid "7b54049f-d88b-4adf-9b35-2edc9b53493e")
 	)
 	(junction
-		(at 209.55 101.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8ad60519-0e84-4c24-bfc0-cadf2b7271af")
-	)
-	(junction
 		(at 254 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5667,6 +5825,12 @@
 		(color 0 0 0 0)
 		(uuid "f8d9a882-3784-41f2-a06f-b320658d5459")
 	)
+	(junction
+		(at 212.09 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fa9cbe22-92e7-48b9-95f5-bdbad8361146")
+	)
 	(no_connect
 		(at 121.92 110.49)
 		(uuid "04b9060c-1e5d-4520-9a62-10f06e658b56")
@@ -5720,6 +5884,10 @@
 		(uuid "77cab5df-ae8a-44bd-949e-22592f230ba2")
 	)
 	(no_connect
+		(at 208.28 109.22)
+		(uuid "78bed535-ba96-409b-b468-657d088c6516")
+	)
+	(no_connect
 		(at 121.92 113.03)
 		(uuid "7bbf3a86-9cbf-492a-90fd-7e10105bd672")
 	)
@@ -5732,12 +5900,20 @@
 		(uuid "8960d915-ac5e-454d-a17b-24153a97584b")
 	)
 	(no_connect
+		(at 43.18 187.96)
+		(uuid "a04e94cc-14dd-4a6f-ab04-91ef7119204d")
+	)
+	(no_connect
 		(at 59.69 85.09)
 		(uuid "a17fdfa3-0c61-43ca-b257-d5fc7c0798eb")
 	)
 	(no_connect
 		(at 29.21 77.47)
 		(uuid "aa8b917d-f00b-4b90-8a05-728aa849b6bb")
+	)
+	(no_connect
+		(at 53.34 187.96)
+		(uuid "aca1c1e8-c089-407b-ac02-6c05a52870f7")
 	)
 	(no_connect
 		(at 29.21 74.93)
@@ -5776,6 +5952,16 @@
 			(type default)
 		)
 		(uuid "01c9652d-79ec-41cc-a768-ab673757a5a3")
+	)
+	(wire
+		(pts
+			(xy 218.44 109.22) (xy 218.44 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03aead1d-a3e5-4815-a040-65fa5d7c66d8")
 	)
 	(wire
 		(pts
@@ -5929,7 +6115,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 101.6) (xy 209.55 101.6)
+			(xy 207.01 101.6) (xy 212.09 101.6)
 		)
 		(stroke
 			(width 0)
@@ -6009,16 +6195,6 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 101.6) (xy 209.55 104.14)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "367e1420-2dc5-4aa6-bea8-60a0295c1891")
-	)
-	(wire
-		(pts
 			(xy 252.73 78.74) (xy 252.73 80.01)
 		)
 		(stroke
@@ -6066,6 +6242,16 @@
 			(type default)
 		)
 		(uuid "3baf8dfb-9997-40b4-a49d-1733b032a156")
+	)
+	(wire
+		(pts
+			(xy 212.09 101.6) (xy 214.63 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d350992-104a-4b50-a106-b07959f96220")
 	)
 	(wire
 		(pts
@@ -6179,6 +6365,16 @@
 	)
 	(wire
 		(pts
+			(xy 55.88 182.88) (xy 53.34 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a3db242-d580-43f3-9b7e-3baf3a46b40a")
+	)
+	(wire
+		(pts
 			(xy 44.45 31.75) (xy 44.45 39.37)
 		)
 		(stroke
@@ -6186,6 +6382,16 @@
 			(type default)
 		)
 		(uuid "5ce4d79e-c95e-4d4a-a5ee-f400492e2835")
+	)
+	(wire
+		(pts
+			(xy 218.44 109.22) (xy 215.9 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5eb4853c-193a-48bc-aaea-e24b46188fc2")
 	)
 	(wire
 		(pts
@@ -6239,16 +6445,6 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 111.76) (xy 209.55 115.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6ea0f7e8-af67-46e1-b43f-ef7c2bff379c")
-	)
-	(wire
-		(pts
 			(xy 83.82 161.29) (xy 83.82 162.56)
 		)
 		(stroke
@@ -6259,7 +6455,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 115.57) (xy 195.58 115.57)
+			(xy 195.58 115.57) (xy 218.44 115.57)
 		)
 		(stroke
 			(width 0)
@@ -6276,16 +6472,6 @@
 			(type default)
 		)
 		(uuid "7425f394-8efe-4827-9124-5fbd3da55855")
-	)
-	(wire
-		(pts
-			(xy 207.01 101.6) (xy 209.55 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75a45994-684d-4146-9e10-73447b74f9c8")
 	)
 	(wire
 		(pts
@@ -6376,6 +6562,16 @@
 			(type default)
 		)
 		(uuid "99ec9e3f-e353-4f1c-a6db-c6f66cc8e221")
+	)
+	(wire
+		(pts
+			(xy 212.09 101.6) (xy 212.09 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b3782d2-04c8-4425-9a27-89037f6cfeaf")
 	)
 	(wire
 		(pts
@@ -9496,7 +9692,7 @@
 	)
 	(symbol
 		(lib_id "power:+2V5")
-		(at 53.34 182.88 270)
+		(at 55.88 182.88 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9505,7 +9701,7 @@
 		(fields_autoplaced yes)
 		(uuid "397bb30e-af4d-4767-b24a-1889505e1c1e")
 		(property "Reference" "#PWR010"
-			(at 49.53 182.88 0)
+			(at 52.07 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9514,7 +9710,7 @@
 			)
 		)
 		(property "Value" "+2V5"
-			(at 57.15 182.8799 90)
+			(at 59.69 182.8799 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9523,7 +9719,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 182.88 0)
+			(at 55.88 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9532,7 +9728,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 182.88 0)
+			(at 55.88 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9541,7 +9737,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+2V5\""
-			(at 53.34 182.88 0)
+			(at 55.88 182.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10001,43 +10197,32 @@
 		)
 	)
 	(symbol
-		(lib_name "SW_Push_1")
-		(lib_id "Switch:SW_Push")
-		(at 48.26 182.88 0)
+		(lib_id "Device:R_Potentiometer")
+		(at 212.09 109.22 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "631851a7-50c9-4d06-aa13-381e26f7c1b0")
-		(property "Reference" "SW2"
-			(at 48.26 175.26 0)
+		(uuid "60972f62-7885-4dd9-91d8-1592be451bdf")
+		(property "Reference" "RV1"
+			(at 223.266 103.886 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "430162085826"
-			(at 48.26 177.8 0)
+		(property "Value" "50k_Potentiometer"
+			(at 223.266 106.426 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "breathalyzer:430162085826"
-			(at 48.26 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Wurth-Elektronik/430162085826?qs=sPbYRqrBIVnNOZ1%252Bx8%2F2Rw%3D%3D"
-			(at 48.26 177.8 0)
+		(property "Footprint" "Potentiometer_THT:Potentiometer_ACP_CA9-H5_Horizontal"
+			(at 212.09 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10045,8 +10230,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 48.26 182.88 0)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Same-Sky/PTN06-B50CB20-H?qs=sGAEpiMZZMu7u4aXTvZ%252Bj76JCkJt%2F1Rf8NnkN%252BqUlJ17HNc3pPYO6w%3D%3D"
+			(at 212.09 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10054,16 +10239,28 @@
 				(hide yes)
 			)
 		)
-		(pin "3"
-			(uuid "f26978f5-93b8-41f8-97cc-8e6b3576b8b7")
+		(property "Description" "Potentiometer"
+			(at 212.09 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
 		(pin "1"
-			(uuid "acf8078f-1c5e-46c2-9871-b27ab30e00a1")
+			(uuid "b5216fce-d386-4246-b018-f68024ce5c4a")
+		)
+		(pin "2"
+			(uuid "df27c429-b0fc-43cf-ac52-7d29f66baea5")
+		)
+		(pin "3"
+			(uuid "c7d75135-80db-4287-ba41-e6fc897f8a66")
 		)
 		(instances
-			(project "breathalyzer"
+			(project ""
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
-					(reference "SW2")
+					(reference "RV1")
 					(unit 1)
 				)
 			)
@@ -11567,6 +11764,80 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_Push_Dual")
+		(at 48.26 185.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c3089f43-635d-4099-aeb3-bf8499ef4dc3")
+		(property "Reference" "SW2"
+			(at 48.26 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_Push_Dual"
+			(at 48.26 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "breathalyzer:430162085826"
+			(at 48.26 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Wurth-Elektronik/430162085826?qs=sPbYRqrBIVnNOZ1%252Bx8%2F2Rw%3D%3D"
+			(at 48.26 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Push button switch, generic, symbol, four pins"
+			(at 48.26 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "73a12689-7f11-4e58-91f8-57fc14b9f393")
+		)
+		(pin "4"
+			(uuid "40d38e89-c9bc-4e12-ae95-92cada93f704")
+		)
+		(pin "1"
+			(uuid "2a4e6b8e-a090-4044-bb61-c9b52c58708d")
+		)
+		(pin "3"
+			(uuid "872ee078-d8ad-4742-9837-b6168f0dfd3b")
+		)
+		(instances
+			(project ""
+				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5V")
 		(at 269.24 31.75 270)
 		(unit 1)
@@ -12159,76 +12430,6 @@
 			(project ""
 				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
 					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Variable")
-		(at 209.55 107.95 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ef94133d-3049-4971-8250-ff09739622c6")
-		(property "Reference" "R1"
-			(at 213.36 106.6799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "50k_Variable"
-			(at 213.36 109.2199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Potentiometer_THT:Potentiometer_ACP_CA9-H5_Horizontal"
-			(at 207.772 107.95 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://hu.mouser.com/ProductDetail/Same-Sky/PTN06-B50CB20-H?qs=sGAEpiMZZMu7u4aXTvZ%252Bj76JCkJt%2F1Rf8NnkN%252BqUlJ17HNc3pPYO6w%3D%3D"
-			(at 209.55 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Variable resistor"
-			(at 209.55 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ee8bc464-886d-4550-b5e0-334fe5e557f2")
-		)
-		(pin "1"
-			(uuid "41363409-f848-4c83-bba2-55773b41147c")
-		)
-		(instances
-			(project ""
-				(path "/e92d6a20-f7e6-42bc-b7eb-52ddd833ed75"
-					(reference "R1")
 					(unit 1)
 				)
 			)
