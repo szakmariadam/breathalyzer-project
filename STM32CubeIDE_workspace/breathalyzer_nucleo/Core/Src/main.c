@@ -44,8 +44,8 @@ typedef struct{
 
 #define VC 2.27f //manually calibrated
 #define VCC 3.06f //manually calibrated
-#define RL 100000.0f //not calibrated
-#define R0 26500 //calibrated
+#define RL 33333.3f //not calibrated
+#define R0 23000 //calibrated
 
 /* USER CODE END PD */
 
@@ -641,7 +641,7 @@ void TIM3_callback(void)
       BrAC = 0.366 * pow((10*sensorResistance)/R0, -1.509); //sensor characteristics from datasheet
       BAC = ((BrAC*2100)/1000)/10;  //2100 BrAC to BAC conversion factor
 
-      display_value = BAC * 100; // Convert voltage to display value
+      display_value = round(BAC * 100); // Convert voltage to display value
 
       HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
       //HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
@@ -747,11 +747,7 @@ void warmup(void)
   display_value = 0.0f * 100;
   //getADCvalue(); // Get ADC value
 
-  while(ADC_result <= 2200)
-  {
-    HAL_Delay(1000);
-    getADCvalue(); // Get ADC value
-  }
+  HAL_Delay(10000);
 
   warmedUp = 1;
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
