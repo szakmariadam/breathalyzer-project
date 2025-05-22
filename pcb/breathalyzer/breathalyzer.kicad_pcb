@@ -157,6 +157,7 @@
 	(net 77 "unconnected-(RV1-Pad1)")
 	(net 78 "unconnected-(SW2-Pad2)")
 	(net 79 "unconnected-(SW2-Pad4)")
+	(net 80 "unconnected-(U2-NC-Pad4)")
 	(footprint "Package_LCC:PLCC-44"
 		(layer "F.Cu")
 		(uuid "30671446-fd43-4dc5-b7bc-5b9a2d212228")
@@ -825,6 +826,17 @@
 		)
 		(embedded_fonts no)
 		(model "${KICAD9_3DMODEL_DIR}/Package_LCC.3dshapes/PLCC-44.wrl"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/models/44J_ATM.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -3943,7 +3955,7 @@
 		(property "Reference" "RV1"
 			(at 0 3.65 180)
 			(layer "B.SilkS")
-			(uuid "ed40841c-05b1-419a-a94e-cf231a3baf72")
+			(uuid "5544b7cd-e383-4559-8c74-20a1ddbe9ee6")
 			(effects
 				(font
 					(size 1 1)
@@ -3955,7 +3967,7 @@
 		(property "Value" "50k_Potentiometer"
 			(at 9.525 -9.285 180)
 			(layer "B.Fab")
-			(uuid "ca34bf40-97c2-4ed2-910a-4ad45293f5a2")
+			(uuid "d34efc6e-d10b-4972-b14c-2772b1a629bc")
 			(effects
 				(font
 					(size 1 1)
@@ -3968,7 +3980,7 @@
 			(at 0 0 180)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "d30efd4c-2bdc-4225-80a6-8fc1010f3583")
+			(uuid "ca651ed1-2cc9-46e2-a0ea-b7d7c0316079")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3981,7 +3993,7 @@
 			(at 0 0 180)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "ace71ffb-9efe-47ad-9ca4-0072a35c2215")
+			(uuid "79becd4d-ed01-4b20-ac38-2be0b697eeb9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5298,7 +5310,7 @@
 			(size 1.325 0.6)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
-			(net 1 "GND")
+			(net 80 "unconnected-(U2-NC-Pad4)")
 			(pinfunction "NC")
 			(pintype "no_connect")
 			(uuid "1b995415-a5fa-4f24-948a-f3f741998a92")
@@ -6040,6 +6052,17 @@
 		)
 		(embedded_fonts no)
 		(model "25SH-B-04-TS.stp"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/models/25SH-B-04-TS.stp"
 			(offset
 				(xyz 0 0 0)
 			)
