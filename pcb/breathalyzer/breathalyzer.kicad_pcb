@@ -1354,15 +1354,15 @@
 			(uuid "4a7992d2-916e-424d-9552-6cb7ed919ea8")
 		)
 		(embedded_fonts no)
-		(model "430162085826.stp"
+		(model "${KIPRJMOD}/models/Download_STP_430162085826_rev1.stp"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 0 0.5)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -3386,7 +3386,8 @@
 			(uuid "f2cc89f1-647e-4bc7-ab7c-b1007ff57c1a")
 		)
 		(embedded_fonts no)
-		(model "PTS636SM43JSMTR_LFS.stp"
+		(model "${KIPRJMOD}/models/PTS636SM43JSMTR_LFS.stp"
+			(hide yes)
 			(offset
 				(xyz 0 0 0)
 			)
@@ -3395,6 +3396,17 @@
 			)
 			(rotate
 				(xyz 0 0 0)
+			)
+		)
+		(model "${KIPRJMOD}/models/PTS636_SK25F_SMTR_LFS.stp"
+			(offset
+				(xyz 0 0 2.5)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 90 -0 -0)
 			)
 		)
 	)
@@ -3934,7 +3946,7 @@
 			(uuid "a5ae6667-1ff1-476d-97f3-4648847e79d4")
 		)
 		(embedded_fonts no)
-		(model "22-28-8073.stp"
+		(model "${KIPRJMOD}/models/22-28-8073.stp"
 			(offset
 				(xyz 7.619999771 2.999999955 1.100000007)
 			)
@@ -4206,15 +4218,15 @@
 			(uuid "ab20fd4e-d23d-4511-a370-5708933a0b58")
 		)
 		(embedded_fonts no)
-		(model "${KICAD9_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_ACP_CA9-H5_Horizontal.wrl"
+		(model "${KIPRJMOD}/models/601030.stp"
 			(offset
-				(xyz 0 0 0)
+				(xyz 2.5 -2.5 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 90)
 			)
 		)
 	)
@@ -6051,15 +6063,16 @@
 			(uuid "e8e3a220-084e-48a0-b2dc-1d57bb919955")
 		)
 		(embedded_fonts no)
-		(model "25SH-B-04-TS.stp"
+		(model "${KIPRJMOD}/models/140-504-415-001.stp"
+			(hide yes)
 			(offset
-				(xyz 0 0 0)
+				(xyz -6.5 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 -0 -0)
 			)
 		)
 		(model "${KIPRJMOD}/models/25SH-B-04-TS.stp"
@@ -6337,15 +6350,15 @@
 			(uuid "accb1eb2-3ed8-4129-a578-28f9537a2dfa")
 		)
 		(embedded_fonts no)
-		(model "CPT-14146-80T.stp"
+		(model "${KIPRJMOD}/models/CPT-14146-80T.stp"
 			(offset
-				(xyz 0 0 0)
+				(xyz 0 3.75 -2.5)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -90 -0 -5)
 			)
 		)
 	)
@@ -6555,7 +6568,7 @@
 			(uuid "319cd468-1b23-4bc5-a72f-e02a08c229d2")
 		)
 		(embedded_fonts no)
-		(model "440055-2.stp"
+		(model "${KIPRJMOD}/models/440055-2.stp"
 			(offset
 				(xyz -1.009999975 6.0500001 2.35999986)
 			)
