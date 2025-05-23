@@ -11895,6 +11895,28 @@
 		(net 1)
 		(net_name "GND")
 		(layer "F.Cu")
+		(uuid "23478298-9a38-43e8-ba9a-c57399f475a3")
+		(hatch edge 0.5)
+		(priority 11)
+		(connect_pads
+			(clearance 0.5)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy 125.73 38.1) (xy 161.925 38.1) (xy 161.925 120.015) (xy 125.73 120.015)
+			)
+		)
+	)
+	(zone
+		(net 1)
+		(net_name "GND")
+		(layer "F.Cu")
 		(uuid "d73def92-225c-49ea-9b7c-faf45b80b3bf")
 		(hatch edge 0.5)
 		(priority 3)
@@ -12092,6 +12114,28 @@
 				(xy 139.138358 92.921) (xy 139.263243 92.896158) (xy 139.27369 92.89408) (xy 139.337431 92.867677)
 				(xy 139.401169 92.841277) (xy 139.40117 92.841276) (xy 139.401173 92.841275) (xy 139.515905 92.764614)
 				(xy 139.9867 92.293818) (xy 140.048022 92.260334) (xy 140.07438 92.2575) (xy 143.386 92.2575)
+			)
+		)
+	)
+	(zone
+		(net 1)
+		(net_name "GND")
+		(layer "B.Cu")
+		(uuid "c9f3626e-b083-47c2-8886-421d69ad272d")
+		(hatch edge 0.5)
+		(priority 10)
+		(connect_pads
+			(clearance 0.5)
+		)
+		(min_thickness 0.25)
+		(filled_areas_thickness no)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+		)
+		(polygon
+			(pts
+				(xy 125.73 38.1) (xy 161.925 38.1) (xy 161.925 120.015) (xy 125.73 120.015)
 			)
 		)
 	)
