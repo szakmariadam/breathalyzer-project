@@ -10068,7 +10068,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "565afb25-8484-4392-af79-ddf22c298e3c")
 		(property "Reference" "BT1"
 			(at 261.62 130.2384 0)
@@ -10079,8 +10078,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Battery"
-			(at 261.62 132.7784 0)
+		(property "Value" "2x AA Battery"
+			(at 259.588 132.842 0)
 			(effects
 				(font
 					(size 1.27 1.27)
