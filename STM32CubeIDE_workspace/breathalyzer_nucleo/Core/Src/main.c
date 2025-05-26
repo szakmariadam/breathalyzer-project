@@ -644,7 +644,7 @@ void TIM3_callback(void)
       display_value = round(BAC * 100); // Convert voltage to display value
 
       HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
-      //HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
+      HAL_TIM_Base_Start_IT(&htim4);  // standby timeout
     default:
       break;
     }
@@ -711,8 +711,8 @@ void TIM4_callback(void)
 void userButton_callback(void)
 {
   if(warmedUp){
-    //HAL_TIM_Base_Stop_IT(&htim4); // stop and reset standby timeout
-    //__HAL_TIM_SET_COUNTER(&htim4, 0);
+    HAL_TIM_Base_Stop_IT(&htim4); // stop and reset standby timeout
+    __HAL_TIM_SET_COUNTER(&htim4, 0);
 
     measuring = 1; // Start measuring
   }
@@ -752,7 +752,7 @@ void warmup(void)
   warmedUp = 1;
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1); // Start buzzer
 
-  //HAL_TIM_Base_Start_IT(&htim4); // standby timeout
+  HAL_TIM_Base_Start_IT(&htim4); // standby timeout
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
