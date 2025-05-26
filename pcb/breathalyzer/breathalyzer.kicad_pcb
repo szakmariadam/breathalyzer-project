@@ -9018,14 +9018,6 @@
 		(uuid "672980ec-c4e4-4086-adac-b6fee3f53c89")
 	)
 	(segment
-		(start 130.0025 94.8675)
-		(end 131.105 94.8675)
-		(width 0.6)
-		(layer "B.Cu")
-		(net 1)
-		(uuid "77ebd581-e8d0-4bce-9b1c-4b5c6601fb62")
-	)
-	(segment
 		(start 144.465 93.96981)
 		(end 143.93881 94.496)
 		(width 0.6)
